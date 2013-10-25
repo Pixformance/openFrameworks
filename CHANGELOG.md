@@ -15,6 +15,7 @@ _____/\\\\\\\______________/\\\\\\\\\_______________/\\\_
 ```
 MAJOR CHANGES
 -------------
+	+ support for Visual Studio 2013 (drop support for earlier VS versions)
 	/ "testApp" changed to "ofApp" everywhere.
 	
 DEPRECATIONS & REMOVALS
@@ -43,6 +44,7 @@ PLATFORM SPECIFIC
 ### iOS
 ### Linux
 ### Windows
+	+ support for Visual Studio 2013 (drop support for earlier VS versions)
  
 CORE ADDONS
 -----------
