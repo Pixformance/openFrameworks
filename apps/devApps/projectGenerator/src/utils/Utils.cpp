@@ -533,24 +533,32 @@ void parseAddonsDotMake(string path, vector < string > & addons){
 }
 
 bool checkConfigExists(){
-	ofFile config(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator/config"));
-	return config.exists();
+
+	//return ofFile::doesFileExist(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator/config"));
+	return ofFile::doesFileExist(ofFilePath::join(ofFilePath::getAbsolutePath(""), ".ofprojectgenerator/config"));
 }
 
 bool askOFRoot(){
 	ofFileDialogResult res = ofSystemLoadDialog("OF project generator", "choose the folder of your OF install");
 	if (res.fileName == "" || res.filePath == "") return false;
 
-	ofDirectory config(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator"));
+	/*ofDirectory config(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator"));
 	config.create(true);
 	ofFile configFile(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator/config"),ofFile::WriteOnly);
+	configFile << res.filePath;*/
+
+	ofDirectory config(ofFilePath::join(ofFilePath::getAbsolutePath(""), ".ofprojectgenerator"));
+	config.create(true);
+	ofFile configFile(ofFilePath::join(ofFilePath::getAbsolutePath(""), ".ofprojectgenerator/config"), ofFile::WriteOnly);
 	configFile << res.filePath;
 	return true;
 }
 
 string getOFRootFromConfig(){
-	if(!checkConfigExists()) return "";
-	ofFile configFile(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator/config"),ofFile::ReadOnly);
+	if (!checkConfigExists()) return "";
+	//ofFile configFile(ofFilePath::join(ofFilePath::getUserHomeDir(),".ofprojectgenerator/config"),ofFile::ReadOnly);
+	ofFile configFile(ofFilePath::join(ofFilePath::getAbsolutePath(""), ".ofprojectgenerator/config"), ofFile::ReadOnly);
+
 	ofBuffer filePath = configFile.readToBuffer();
 	return filePath.getFirstLine();
 }
