@@ -278,6 +278,9 @@ public:
 	virtual void				firstFrame();
 	virtual void				nextFrame();
 	virtual void				previousFrame();
+
+	//Ìí¼Óquicktime sync·½·¨
+	virtual void                syncToMovie(ofPtr<ofBaseVideoPlayer> player);
 };
 
 //----------------------------------------------------------
