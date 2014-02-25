@@ -568,11 +568,11 @@ string ofSystemTextBoxDialog(string question, string text){
 
 		if(dialog == NULL)
 		{
-			
+
 			MessageBox(NULL,L"Window Creation Failed!\0", L"Error!\0",
 				MB_ICONEXCLAMATION | MB_OK);
 			return text;
-			
+
 		}
 
 		EnableWindow(WindowFromDC(wglGetCurrentDC()), FALSE);
