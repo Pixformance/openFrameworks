@@ -117,7 +117,7 @@ string ofGetTimestampString();
 ///
 /// \param timestampFormat The formatting pattern.
 /// \returns the formatted timestamp as a std::string.
-string ofGetTimestampString(string timestampFormat);
+string ofGetTimestampString(const string& timestampFormat);
 
 /// \brief Get the current year.
 /// \returns the current year.
@@ -142,7 +142,7 @@ int ofGetWeekday();
 /// \param url the URL to open.
 /// \param uriEncodeQuery true iff the query parameters in the given URL have
 /// already been URL encoded.
-void ofLaunchBrowser(string url, bool uriEncodeQuery=false);
+void ofLaunchBrowser(const string& url, bool uriEncodeQuery=false);
 
 /// \brief Enable the use of the data path.
 ///
