@@ -239,7 +239,6 @@ void ofAppGLFWWindow::setupOpenGL(int w, int h, int screenMode){
 
 //--------------------------------------------
 void ofAppGLFWWindow::exit_cb(GLFWwindow* windowP_){
-	OF_EXIT_APP(0);
 }
 
 //--------------------------------------------
@@ -293,10 +292,12 @@ void ofAppGLFWWindow::runAppViaInfiniteLoop(ofBaseApp * appPtr){
 	glfwMakeContextCurrent(windowP);
 
 	ofNotifySetup();
-	while(true){
+	while(!glfwWindowShouldClose(windowP)){
 		ofNotifyUpdate();
 		display();
 	}
+    glfwDestroyWindow(windowP);
+    glfwTerminate();
 }
 
 //------------------------------------------------------------
@@ -489,6 +490,11 @@ int ofAppGLFWWindow::getHeight()
 			return windowW * pixelScreenCoordScale;
 		}
 	}
+}
+
+//------------------------------------------------------------
+GLFWwindow* ofAppGLFWWindow::getGLFWWindow(){
+    return windowP;
 }
 
 //------------------------------------------------------------
@@ -780,7 +786,7 @@ void ofAppGLFWWindow::setFullscreen(bool fullscreen){
 		HWND hwnd = glfwGetWin32Window(windowP);
  
   		DWORD EX_STYLE = WS_EX_OVERLAPPEDWINDOW;
-		DWORD STYLE = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CLIPCHILDREN | WS_CLIPSIBLINGS;
+		DWORD STYLE = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_SIZEBOX;
  
 	  	ChangeDisplaySettings(0, 0);
 		SetWindowLong(hwnd, GWL_EXSTYLE, EX_STYLE);
@@ -877,10 +883,10 @@ void ofAppGLFWWindow::mouse_cb(GLFWwindow* windowP_, int button, int state, int 
 	}
 
 	if (state == GLFW_PRESS) {
-		ofNotifyMousePressed(ofGetMouseX()*instance->pixelScreenCoordScale, ofGetMouseY()*instance->pixelScreenCoordScale, button);
+		ofNotifyMousePressed(ofGetMouseX(), ofGetMouseY(), button);
 		instance->buttonPressed=true;
 	} else if (state == GLFW_RELEASE) {
-		ofNotifyMouseReleased(ofGetMouseX()*instance->pixelScreenCoordScale, ofGetMouseY()*instance->pixelScreenCoordScale, button);
+		ofNotifyMouseReleased(ofGetMouseX(), ofGetMouseY(), button);
 		instance->buttonPressed=false;
 	}
 	instance->buttonInUse = button;
