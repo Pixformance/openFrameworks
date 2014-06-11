@@ -3,7 +3,7 @@
 #include "ofBaseApp.h"
 #include "ofUtils.h"
 #include "ofGraphics.h"
-#include "ofAppGLFWWindow.h"
+#include "ofAppBaseWindow.h"
 #include <set>
 
 static const double MICROS_TO_SEC = .000001;
@@ -110,13 +110,6 @@ void ofSetEscapeQuitsApp(bool bQuitOnEsc){
 	bEscQuits = bQuitOnEsc;
 }
 
-void exitApp(){
-	ofLogVerbose("ofEvents") << "OF app is being terminated!";
-	OF_EXIT_APP(0);
-}
-
-
-
 //------------------------------------------
 void ofNotifySetup(){
 	ofNotifyEvent( ofEvents().setup, voidEventArgs );
@@ -185,7 +178,7 @@ void ofNotifyDraw(){
 }
 
 //------------------------------------------
-void ofNotifyKeyPressed(int key){
+void ofNotifyKeyPressed(int key, int keycode, int scancode, int codepoint){
 	static ofKeyEventArgs keyEventArgs;
 	// FIXME: modifiers are being reported twice, for generic and for left/right
 	// add operators to the arguments class so it can be checked for both
@@ -213,23 +206,21 @@ void ofNotifyKeyPressed(int key){
 	pressedKeys.insert(key);
 
 	keyEventArgs.key = key;
+	keyEventArgs.keycode = keycode;
+	keyEventArgs.scancode = scancode;
+	keyEventArgs.codepoint = codepoint;
 	ofNotifyEvent( ofEvents().keyPressed, keyEventArgs );
 	
 	
 	if (key == OF_KEY_ESC && bEscQuits == true){				// "escape"
-        ofAppGLFWWindow *appGLFWWindow = dynamic_cast<ofAppGLFWWindow*>(ofGetWindowPtr());
-        if (appGLFWWindow) {
-            glfwSetWindowShouldClose(appGLFWWindow->getGLFWWindow(), true);
-        }else{
-            exitApp();
-        }
+		ofGetWindowPtr()->windowShouldClose();
     }
 	
 	
 }
 
 //------------------------------------------
-void ofNotifyKeyReleased(int key){
+void ofNotifyKeyReleased(int key, int keycode, int scancode, int codepoint){
 	static ofKeyEventArgs keyEventArgs;
 
 	// FIXME: modifiers are being reported twice, for generic and for left/right
@@ -258,6 +249,9 @@ void ofNotifyKeyReleased(int key){
 	pressedKeys.erase(key);
 	
 	keyEventArgs.key = key;
+	keyEventArgs.keycode = keycode;
+	keyEventArgs.scancode = scancode;
+	keyEventArgs.codepoint = codepoint;
 	ofNotifyEvent( ofEvents().keyReleased, keyEventArgs );
 }
 
