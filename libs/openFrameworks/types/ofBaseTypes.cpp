@@ -134,6 +134,9 @@ void ofBaseVideoPlayer::previousFrame(){
 	ofLogWarning("ofBaseVideoPlayer") << "previousFrame() not implemented";
 }
 
+void ofBaseVideoPlayer::syncToMovie(ofPtr<ofBaseVideoPlayer> _player){
+	ofLog(OF_LOG_WARNING, "ofBaseVideoPlayer::syncToMovie not implemented");
+}
 //---------------------------------------------------------------------------
 ofMatrix4x4 ofBaseRenderer::getCurrentOrientationMatrix() const {
 	ofLogWarning() << "getCurrentOrientationMatrix() Not implemented for this renderer. Returning Identity matrix.";
