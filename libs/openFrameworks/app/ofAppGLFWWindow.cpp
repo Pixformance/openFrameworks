@@ -38,7 +38,7 @@ GLFWwindow* ofAppGLFWWindow::windowP = NULL;
 void ofGLReadyCallback();
 
 //-------------------------------------------------------
-ofAppGLFWWindow::ofAppGLFWWindow():ofAppBaseGLWindow(){
+ofAppGLFWWindow::ofAppGLFWWindow(){
 	bEnableSetupScreen	= true;
 	buttonInUse			= 0;
 	buttonPressed		= false;
