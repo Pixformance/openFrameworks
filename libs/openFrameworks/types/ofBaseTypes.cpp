@@ -133,11 +133,6 @@ void ofBaseVideoPlayer::previousFrame(){
 }
 
 //---------------------------------------------------------------------------
-//Ìí¼Óquicktime sync·½·¨
-void ofBaseVideoPlayer::syncToMovie(ofPtr<ofBaseVideoPlayer> _player){
-	ofLog(OF_LOG_WARNING, "ofBaseVideoPlayer::syncToMovie not implemented");
-}
-//---------------------------------------------------------------------------
 //void ofBaseVideoPlayer::setPixelFormat(ofPixelFormat pixelFormat){
 //	ofLogWarning("ofBaseVideoPlayer") << "setPixelFormat() not implemented";
 //}
@@ -146,3 +141,9 @@ void ofBaseVideoPlayer::syncToMovie(ofPtr<ofBaseVideoPlayer> _player){
 //	ofLogWarning("ofBaseVideoPlayer") << "getPixelFormat() not implemented";
 //	return OF_PIXELS_RGB;
 //}
+
+//---------------------------------------------------------------------------
+ofMatrix4x4 ofBaseRenderer::getCurrentOrientationMatrix() const {
+	ofLogWarning() << "getCurrentOrientationMatrix() Not implemented for this renderer. Returning Identity matrix.";
+	return ofMatrix4x4();
+}
