@@ -12,6 +12,7 @@ void ofApp::setup(){
 	box.setResolution(1);
 	box.setPosition(ofVec3f(ofGetWidth()*0.5, ofGetHeight()*0.5));
 	record = false;
+	firstFrame = true;
 }
 
 //--------------------------------------------------------------
@@ -33,17 +34,23 @@ void ofApp::update(){
 	ofDisableDepthTest();
 
 	if(record){
+		if(!firstFrame){
+			// wait for the thread to finish saving the
+			// previous frame and then unmap it
+			saverThread.waitReady();
+			pixelBufferBack.unmap();
+		}
+		firstFrame = false;
+
 		// copy the fbo texture to a buffer
 		fbo.getTextureReference().copyTo(pixelBufferBack);
 
-		// map the buffer so we can access it from the cpu
-		// and wrap the memory in an ofPixels to save it
-		// easily. Finally unmap it.
+		// bind and map the buffer as PIXEL_UNPACK so it can be
+		// accessed from a different thread  from the cpu
+		// and send the memory address to the saver thread
 		pixelBufferFront.bind(GL_PIXEL_UNPACK_BUFFER);
 		unsigned char * p = pixelBufferFront.map<unsigned char>(GL_READ_ONLY);
-		pixels.setFromExternalPixels(p,fbo.getWidth(),fbo.getHeight(),OF_PIXELS_RGB);
-		ofSaveImage(pixels,ofToString(ofGetFrameNum())+".jpg");
-		pixelBufferFront.unmap();
+		saverThread.save(p);
 
 		// swap the front and back buffer so we are always
 		// copying the texture to one buffer and reading

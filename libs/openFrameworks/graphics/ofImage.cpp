@@ -6,6 +6,8 @@
 
 #ifndef TARGET_EMSCRIPTEN
 #include "ofURLFileLoader.h"
+#include "Poco/URI.h"
+#include "Poco/Exception.h"
 #endif
 
 #if defined(TARGET_ANDROID) || defined(TARGET_OF_IOS)
@@ -142,7 +144,7 @@ FIBITMAP* getBmpFromPixels(ofPixels_<PixelType> &pix){
 	
 	// ofPixels are top left, FIBITMAP is bottom left
 	FreeImage_FlipVertical(bmp);
-	
+
 	return bmp;
 }
 
@@ -222,8 +224,18 @@ void putBmpIntoPixels(FIBITMAP * bmp, ofPixels_<PixelType> &pix, bool swapForLit
 template<typename PixelType>
 static bool loadImage(ofPixels_<PixelType> & pix, string fileName){
 	ofInitFreeImage();
+
 #ifndef TARGET_EMSCRIPTEN
-	if(fileName.substr(0, 7) == "http://") {
+	// Attempt to parse the fileName as a url - specifically it must be a full address starting with http/https
+	// Poco::URI normalizes to lowercase
+	Poco::URI uri;
+    try {
+        uri = Poco::URI(fileName);
+    } catch(const Poco::SyntaxException& exc){
+        ofLogError("ofImage") << "loadImage(): malformed url when loading image from url \"" << fileName << "\": " << exc.displayText();
+		return false;
+    }
+	if(uri.getScheme() == "http" || uri.getScheme() == "https"){
 		return ofLoadImage(pix, ofLoadURL(fileName).data);
 	}
 #endif
