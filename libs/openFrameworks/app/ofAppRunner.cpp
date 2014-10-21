@@ -33,6 +33,7 @@
 
 static shared_ptr<ofBaseApp>			OFSAptr;
 static shared_ptr<ofAppBaseWindow> 		window;
+static ofThreadErrorLogger threadErrorLogger;
 
 //========================================================================
 // default windowing
@@ -103,6 +104,7 @@ void ofRunApp(ofBaseApp * OFSA){
 
 //--------------------------------------
 void ofRunApp(shared_ptr<ofBaseApp> OFSA){
+	Poco::ErrorHandler::set(&threadErrorLogger);
 	OFSAptr = OFSA;
 	if(OFSAptr){
 		OFSAptr->mouseX = 0;
@@ -152,6 +154,7 @@ void ofRunApp(shared_ptr<ofBaseApp> OFSA){
     ofAddListener(ofEvents().mouseDragged,OFSA.get(),&ofBaseApp::mouseDragged,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().mousePressed,OFSA.get(),&ofBaseApp::mousePressed,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().mouseReleased,OFSA.get(),&ofBaseApp::mouseReleased,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseScrolled,OFSA.get(),&ofBaseApp::mouseScrolled,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().windowEntered,OFSA.get(),&ofBaseApp::windowEntry,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().windowResized,OFSA.get(),&ofBaseApp::windowResized,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().messageEvent,OFSA.get(),&ofBaseApp::messageReceived,OF_EVENT_ORDER_APP);
@@ -192,9 +195,6 @@ static string glslVersionFromGL(int major, int minor){
 void ofSetOpenGLESVersion(int version){
 	glVersionMajor = version;
 	glVersionMinor = 0;
-	if(version>1){
-		ofSetCurrentRenderer(ofGLProgrammableRenderer::TYPE);
-	}
 }
 
 int	ofGetOpenGLESVersion(){
@@ -208,9 +208,6 @@ string ofGetGLSLVersion(){
 void ofSetOpenGLVersion(int major, int minor){
 	glVersionMajor = major;
 	glVersionMinor = minor;
-	if(major>2){
-		ofSetCurrentRenderer(ofGLProgrammableRenderer::TYPE);
-	}
 }
 
 int	ofGetOpenGLVersionMajor(){
@@ -234,11 +231,22 @@ void ofSetupOpenGL(shared_ptr<ofAppBaseGLWindow> windowPtr, int w, int h, ofWind
 #endif
     if(!ofGetCurrentRenderer()) {
 	#ifdef TARGET_PROGRAMMABLE_GL
-	    ofPtr<ofBaseRenderer> renderer(new ofGLProgrammableRenderer(false));
+	    ofSetCurrentRenderer(shared_ptr<ofBaseRenderer>(new ofGLProgrammableRenderer(windowPtr.get()))),false);
 	#else
-	    shared_ptr<ofBaseRenderer> renderer(new ofGLRenderer(false));
+#ifdef TARGET_OPENGLES
+    	if(glVersionMajor>1){
+    	    ofSetCurrentRenderer(shared_ptr<ofBaseRenderer>(new ofGLProgrammableRenderer(windowPtr.get())),false);
+    	}else{
+    		ofSetCurrentRenderer(shared_ptr<ofBaseRenderer>(new ofGLRenderer(windowPtr.get())),false);
+    	}
+#else
+    	if(glVersionMajor>2){
+    	    ofSetCurrentRenderer(shared_ptr<ofBaseRenderer>(new ofGLProgrammableRenderer(windowPtr.get())),false);
+    	}else{
+    		ofSetCurrentRenderer(shared_ptr<ofBaseRenderer>(new ofGLRenderer(windowPtr.get())),false);
+    	}
+#endif
 	#endif
-	    ofSetCurrentRenderer(renderer,false);
     }
 
 	window = windowPtr;
@@ -292,7 +300,8 @@ void ofGLReadyCallback(){
 
 	//Default colors etc are now in ofGraphics - ofSetupGraphicDefaults
 	ofSetupGraphicDefaults();
-	ofBackground(200);
+	ofViewport();
+	ofSetupScreenPerspective();
 	ofSetVerticalSync(true);
 	ofEnableAlphaBlending();
 }

@@ -17,6 +17,9 @@ CORE
 ### 3d
 	/ ofEasyCam: removes roll rotation when rotating inside the arcball
 	/ ofEasyCam: disables mouse events when moving ofxGui or other higher priority events
+	/ ofDrawGrid: arguments changed to ```float stepSize, size_t numberOfSteps``` instead of ```float scale, float ticks```
+	/ ofDrawGridPlane: arguments changed to ```float stepSize, size_t numberOfSteps``` instead of ```float scale, float ticks```
+	/ ofCamera: fix calculations on first frame or before first call to begin
 	
 ### gl
 	+ Programmable lights and materials
@@ -40,6 +43,7 @@ CORE
 	- ofRestoreMinMagFilters() : deprecated	  
 	+ ofShader: report offending lines on compiling errors
 	+ ofGLUtils: better support for half float types
+	/ getTextureReference -> getTexture
 
 ### graphics
 	+ ofTruetypeFont: kerning and better hinting and spacing
@@ -48,9 +52,16 @@ CORE
 	/ getPixelsRef() deprecated and getPixels() now returns ofPixels
 	  temporarily ofPixels auto casts to unsigned char* so old code
 	  is still compatible
+	/ ofPixels::getPixels() -> getData()
 	+ ofPixels support for YUV formats, the prefered allocation method
 	  changes from channels to ofPixelFormat like:
 		pix.allocate(w,h,OF_PIXELS_RGB)
+	/ fixed ofSetBackgroundColor
+	/ added ofGetBackgroundColor and ofGetBackgroundAuto
+	- removed ofbBGColor and ofbBGClear
+	/ ofImage::loadImage() -> load()
+	/ ofImage::saveImage() -> save()
+	+ ofBeginSaveScreenAsSVG
 
 ### utils
 	/ better timming in fps calculation
@@ -59,12 +70,15 @@ CORE
 	+ ofThreadChannel: thread synchronization primitive to make it
 	  easier to work with threads avoiding the need for mutexes in
 	  most cases. see example/utils/threadChannelExample
+	/ ofBuffer::getBinaryBuffer() -> getData()
 
 ### video
 	/ gstreamer: fix memory leaks when closing a video element
 	+ gstreamer: support for YUV formats when using the programmable renderer
 	  using OF_PIXELS_NATIVE as pixel format will choose the fastest format
 	/ gstreamer: faster reload by default and optional asynchronous load
+	/ ofVideoPlayer::loadMovie() -> load()
+	/ ofVideoGrabber::initGrabber() -> setup()
 
 PLATFORM SPECIFIC
 -----------------
@@ -77,6 +91,8 @@ PLATFORM SPECIFIC
 	+ deployment target moved up to iOS 5.1.1
 
 ### android
+	+ fix camera stretching artifacts experienced on some devices when using 16:9 
+	  aspect ratios
 	+ remove support for arm5 since no devices seem to have that cpu anymore and it
 	  was problematic with certain libraries
 
