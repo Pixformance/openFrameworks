@@ -295,6 +295,14 @@ float ofVideoPlayer::getDuration() const{
 	
 	return 0.0;
 }
+//---------------------------------------------------------------------------
+void ofVideoPlayer::syncToMovie(ofPtr<ofBaseVideoPlayer> _player){
+	if (player != NULL){
+		player->syncToMovie(_player);
+
+	}
+
+}
 
 //---------------------------------------------------------------------------
 float ofVideoPlayer::getPosition() const{
