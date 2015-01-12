@@ -38,7 +38,6 @@ static int			windowW;
 static int			windowH;
 static int          nFramesSinceWindowResized;
 static ofOrientation	orientation;
-static ofBaseApp *  ofAppPtr;
 static ofAppGlutWindow * instance;
 
 #ifdef TARGET_WIN32
@@ -204,12 +203,10 @@ ofAppGlutWindow::ofAppGlutWindow(){
 	displayString = displayStr;
  }
 
-
+ //------------------------------------------------------------
 void ofAppGlutWindow::setDoubleBuffering(bool _bDoubleBuffered){ 
 	bDoubleBuffered = _bDoubleBuffered;
 }
-
-
 
 //------------------------------------------------------------
 void ofAppGlutWindow::setup(const ofGLWindowSettings & settings){
@@ -309,6 +306,9 @@ void ofAppGlutWindow::setup(const ofGLWindowSettings & settings){
 
     glutReshapeFunc(resize_cb);
 	glutEntryFunc(entry_cb);
+#ifdef TARGET_LINUX
+	glutCloseFunc(exit_cb);
+#endif
 
 #ifdef TARGET_OSX
 	glutDragEventFunc(dragEvent);
@@ -370,38 +370,30 @@ void ofAppGlutWindow::setWindowIcon(const ofPixels & iconPixels){
 }
 #endif
 
-
+//------------------------------------------------------------
 void ofAppGlutWindow::update(){
 	idle_cb();
 }
 
+//------------------------------------------------------------
 void ofAppGlutWindow::draw(){
 	display();
 }
 
-
+//------------------------------------------------------------
 void ofAppGlutWindow::close(){
 	events().notifyExit();
 	events().disable();
 #ifdef TARGET_LINUX
 	glutLeaveMainLoop();
 #else
-	std::exit(0);
+	ofExit(0);
 #endif
 }
 
 //------------------------------------------------------------
-void ofAppGlutWindow::run(ofBaseApp * appPtr){
-	ofAppPtr = appPtr;
-
-	events().notifySetup();
-	events().notifyUpdate();
-
-	glutMainLoop();
-}
-
-//------------------------------------------------------------
 void ofAppGlutWindow::loop(){
+	instance->events().notifySetup();
 	instance->events().notifyUpdate();
 	glutMainLoop();
 }
@@ -785,11 +777,6 @@ void ofAppGlutWindow::dragEvent(char ** names, int howManyFiles, int dragX, int 
 
 //------------------------------------------------------------
 void ofAppGlutWindow::idle_cb(void) {
-	if(instance->events().windowShouldClose()){
-		instance->events().notifyExit();
-		ofExit(0);
-		return;
-	}
 	instance->currentRenderer->update();
 	instance->events().notifyUpdate();
 
@@ -827,8 +814,13 @@ void ofAppGlutWindow::resize_cb(int w, int h) {
 	nFramesSinceWindowResized = 0;
 }
 
-void ofAppGlutWindow::entry_cb( int state ) {
-	
+//------------------------------------------------------------
+void ofAppGlutWindow::entry_cb(int state) {
 	instance->events().notifyWindowEntry( state );
-	
+}
+
+//------------------------------------------------------------
+void ofAppGlutWindow::exit_cb() {
+	instance->events().notifyExit();
+	instance->events().disable();
 }
