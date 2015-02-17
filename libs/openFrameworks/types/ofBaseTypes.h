@@ -504,7 +504,6 @@ public:
 
 	virtual void startRender() = 0;
 	virtual void finishRender() = 0;
-	virtual void update()=0;
 
 	virtual void draw(const ofPolyline & poly) const=0;
 	virtual void draw(const ofPath & shape) const=0;
