@@ -78,15 +78,15 @@ const vector<float> & ofSoundBuffer::getBuffer() const{
 }
 
 uint64_t ofSoundBuffer::getDurationMS() const{
-	return getNumFrames() * 1000 / double(samplerate);
+	return uint64_t(getNumFrames()) * uint64_t(1000) / uint64_t(samplerate);
 }
 
 uint64_t ofSoundBuffer::getDurationMicros() const{
-	return getNumFrames() * 1000000 / samplerate;
+	return uint64_t(getNumFrames()) * uint64_t(1000000) / uint64_t(samplerate);
 }
 
 uint64_t ofSoundBuffer::getDurationNanos() const{
-	return getNumFrames() * 1000000000 / samplerate;
+	return uint64_t(getNumFrames()) * uint64_t(1000000000) / uint64_t(samplerate);
 }
 
 void ofSoundBuffer::setNumChannels(int channels){
@@ -290,6 +290,15 @@ void ofSoundBuffer::addTo(float * outBuffer, std::size_t nFrames, std::size_t ou
 		// loop
 		addTo(outBuffer, framesRemaining, outChannels, 0, loop);
 	}
+}
+
+
+void ofSoundBuffer::append(ofSoundBuffer & other){
+	if(other.getNumChannels() != getNumChannels()){
+		ofLogError() << "can't append sound buffers with different num channels";
+		return;
+	}
+	buffer.insert(buffer.end(),other.buffer.begin(),other.buffer.end());
 }
 
 static bool prepareBufferForResampling(const ofSoundBuffer &in, ofSoundBuffer &out, unsigned int numFrames) {

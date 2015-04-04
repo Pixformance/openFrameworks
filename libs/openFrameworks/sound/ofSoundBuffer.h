@@ -107,7 +107,7 @@ public:
 	unsigned long getNumFrames() const { return size()/getNumChannels(); }
 	
 	/// return the tickCount that was assigned by ofSoundStream (if this buffer originated from an ofSoundStream).
-	unsigned long long getTickCount() const { return tickCount; }
+	uint64_t getTickCount() const { return tickCount; }
 	void setTickCount(unsigned long long tick){ tickCount = tick; }
 	
 	/// return the duration of audio in this buffer in milliseconds (==(getNumFrames()/getSampleRate())*1000)
@@ -163,6 +163,8 @@ public:
 	void copyTo(ofSoundBuffer & outBuffer, std::size_t frameFrame = 0, bool loop = false) const;
 	/// as addTo above but reads outNumFrames and outNumChannels from outBuffer
 	void addTo(ofSoundBuffer & outBuffer, std::size_t fromFrame = 0, bool loop = false) const;
+
+	void append(ofSoundBuffer & other);
 
 	/// copy sample data to out, where out is already allocated to match outNumFrames and outNumChannels (ie outNumFrames*outNumChannels samples).
 	/// fromFrame is a frame offset. if we don't have enough source data, loop with fromFrame=0 until we have filled the out buffer.
@@ -223,7 +225,7 @@ protected:
 	std::size_t channels;
 	unsigned int samplerate;
 
-	unsigned long long tickCount;
+	uint64_t tickCount;
 	int soundStreamDeviceID;
 };
 
