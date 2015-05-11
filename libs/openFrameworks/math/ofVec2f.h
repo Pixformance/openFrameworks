@@ -487,7 +487,7 @@ public:
 	/// 
 	/// ~~~~{.cpp}
 	/// ofVec2f v1(1, 0);
-	/// ofVec2f v2 = v1.getRotated( 45 ); // v2 is (âˆš2, âˆš2)
+	/// ofVec2f v2 = v1.getRotated( 45 ); // v2 is (¡Ì2, ¡Ì2)
 	/// ofVec3f v3 = v2.getRotated( 45 ); // v3 is (0, 1)
 	/// ~~~~
 	/// 
@@ -503,7 +503,7 @@ public:
 	/// 
 	/// ~~~~{.cpp}
 	/// ofVec2f v1(1, 0);
-	/// ofVec2f v2 = v1.getRotatedRad( PI/4 ); // v2 is (âˆš2, âˆš2)
+	/// ofVec2f v2 = v1.getRotatedRad( PI/4 ); // v2 is (¡Ì2, ¡Ì2)
 	/// ofVec3f v3 = v2.getRotatedRad( PI/4 ); // v3 is (0, 1)
 	/// ~~~~
 	///     
@@ -517,7 +517,7 @@ public:
 	/// 
 	/// ~~~~{.cpp}
 	/// ofVec2f v1(1, 0);
-	/// v1.rotate( 45 ); // (âˆš2, âˆš2)
+	/// v1.rotate( 45 ); // (¡Ì2, ¡Ì2)
 	/// v1.rotate( 45 ); // (0, 1)
 	/// ~~~~
 	///
@@ -531,7 +531,7 @@ public:
 	/// 
 	/// ~~~~{.cpp}
 	/// ofVec2f v1(1, 0);
-	/// v1.rotate( PI/4 ); // (âˆš2, âˆš2)
+	/// v1.rotate( PI/4 ); // (¡Ì2, ¡Ì2)
 	/// v1.rotate( PI/4 ); // (0, 1)
 	/// ~~~~
 	///
@@ -597,7 +597,7 @@ public:
 	/// squareDistance() instead.
 	/// 
 	/// \param pnt The point to calculate the distance to
-	///Â \returns The distance as float
+	///?\returns The distance as float
 	/// \sa squareDistance()
     float distance( const ofVec2f& pnt) const;
 
@@ -737,7 +737,7 @@ public:
 	/// ofVec2f v1(5, 0);
 	/// ofVec2f v1Normalized = v1.getNormalized(); // (1, 0)
 	/// ofVec2f v2(5, 5);
-	/// ofVec2f v2Normalized = v2.getNormalized(); // (âˆš2, âˆš2)
+	/// ofVec2f v2Normalized = v2.getNormalized(); // (¡Ì2, ¡Ì2)
 	/// ~~~~
     ofVec2f  getNormalized() const;
 
@@ -752,7 +752,7 @@ public:
 	/// ofVec2f v1(5, 0);
 	/// v1.normalize(); // v2 is now (1, 0)
 	/// ofVec2f v2(5, 5);
-	/// v2.normalize(); // v2 is now (âˆš2, âˆš2)
+	/// v2.normalize(); // v2 is now (¡Ì2, ¡Ì2)
 	/// ~~~~
 	/// \sa getNormalized()
     ofVec2f& normalize();
@@ -770,7 +770,7 @@ public:
 	/// // v2Limited is (2, 1) (same as v2)
 	/// ~~~~
 	/// 
-	///Â \sa limit()
+	///?\sa limit()
 	/// \param max The maximum length of the vector to return
 	/// \returns A copy of this vector with its length (magnitude) restricted to a
     /// maximum of max units by scaling down if necessary.
@@ -789,7 +789,7 @@ public:
 	/// // v2 is unchanged
 	/// ~~~~
 	///
-	///Â \sa limit()
+	///?\sa limit()
     ofVec2f& limit(float max);
 
 	

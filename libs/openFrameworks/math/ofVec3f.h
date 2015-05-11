@@ -7,7 +7,7 @@
 #include <cmath>
 #include <iostream>
 
-///Â \brief  ofVec3f is a class for storing a three dimensional vector.
+///?\brief  ofVec3f is a class for storing a three dimensional vector.
 /// 
 /// Moving through space requires knowledge of where things are and where they are
 /// going. Vector Maths is the class of mathematics that gives us control over
@@ -482,9 +482,9 @@ public:
 	/// ~~~~{.cpp}
 	/// ofVec3f v1(1, 0, 0);
 	/// // rotate v1 around the z axis
-	/// ofVec3f v2 = v1.getRotated(45, ofVec3f(0, 0, 1)); // v2 is (âˆš2, âˆš2, 0)
+	/// ofVec3f v2 = v1.getRotated(45, ofVec3f(0, 0, 1)); // v2 is (¡Ì2, ¡Ì2, 0)
 	/// // rotate v1 around the y axis
-	/// ofVec3f v3 = v1.getRotated(45, ofVec3f(0, 1, 0)); // v3 is (âˆš2, 0, âˆš2)
+	/// ofVec3f v3 = v1.getRotated(45, ofVec3f(0, 1, 0)); // v3 is (¡Ì2, 0, ¡Ì2)
 	/// ~~~~
 	/// 
     ofVec3f  getRotated( float angle, const ofVec3f& axis ) const;
@@ -496,7 +496,7 @@ public:
 	/// ~~~~~{.cpp}
 	/// ofVec3f v1( 1, 0, 0 );
 	/// ofVec3f v2 = v1.getRotated( 0, 0, 90 ); // v is now (0, 1, 0)
-	/// ofVec3f v3 = v1.getRotated( 45, 0, 0 ); // v is now (0, âˆš2, âˆš2)
+	/// ofVec3f v3 = v1.getRotated( 45, 0, 0 ); // v is now (0, ¡Ì2, ¡Ì2)
 	/// ~~~~~
 	/// 
 	/// Watch out for gimbal lock when specifying multiple rotations in the same call.
@@ -515,9 +515,9 @@ public:
     /// ~~~~{.cpp}
     /// ofVec3f v1(1, 0, 0);
     /// // rotate v1 around the z axis
-    /// ofVec3f v2 = v1.getRotated(PI/4, ofVec3f(0, 0, 1)); // v2 is (âˆš2, âˆš2, 0)
+    /// ofVec3f v2 = v1.getRotated(PI/4, ofVec3f(0, 0, 1)); // v2 is (¡Ì2, ¡Ì2, 0)
     /// // rotate v1 around the y axis
-    /// ofVec3f v3 = v1.getRotated(PI/4, ofVec3f(0, 1, 0)); // v3 is (âˆš2, 0, âˆš2)
+    /// ofVec3f v3 = v1.getRotated(PI/4, ofVec3f(0, 1, 0)); // v3 is (¡Ì2, 0, ¡Ì2)
     /// ~~~~
     ofVec3f  getRotatedRad( float angle, const ofVec3f& axis ) const;
 
@@ -528,7 +528,7 @@ public:
 	/// ~~~~~{.cpp}
 	/// ofVec3f v1( 1, 0, 0 );
 	/// ofVec3f v2 = v1.getRotatedRad( 0, 0, HALF_PI ); // v is now (0, 1, 0)
-	/// ofVec3f v3 = v1.getRotatedRad( PI/4, 0, 0 ); // v is now (0, âˆš2, âˆš2)
+	/// ofVec3f v3 = v1.getRotatedRad( PI/4, 0, 0 ); // v is now (0, ¡Ì2, ¡Ì2)
 	/// ~~~~~
 	/// 
 	/// Watch out for gimbal lock when specifying multiple rotations in the same call.
@@ -545,11 +545,11 @@ public:
 	/// ~~~~{.cpp}
 	/// ofVec3f v1(1, 0, 0);
 	/// // rotate v1 around the z axis
-	/// v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (âˆš2, âˆš2, 0)
+	/// v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (¡Ì2, ¡Ì2, 0)
 	/// 
 	/// v1.set(1, 0, 0);
 	/// // then rotate around the y axis
-	/// v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (âˆš2, 0, âˆš2)
+	/// v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (¡Ì2, 0, ¡Ì2)
 	/// ~~~~
 	ofVec3f& rotate( float angle, const ofVec3f& axis );
 
@@ -559,7 +559,7 @@ public:
 	/// ~~~~~{.cpp}
 	/// ofVec3f v( 1, 0, 0 );
 	/// v.rotate( 0, 0, 90 ); // v is now (0, 1, 0)
-	/// v.rotate( 45, 0, 0 ); // v is now (0, âˆš2, âˆš2)
+	/// v.rotate( 45, 0, 0 ); // v is now (0, ¡Ì2, ¡Ì2)
 	/// ~~~~~
 	/// 
 	/// Watch out for gimbal lock when specifying multiple rotations in the same call.
@@ -577,11 +577,11 @@ public:
 	/// ~~~~{.cpp}
 	/// ofVec3f v1(1, 0, 0);
 	/// // rotate v1 around the z axis
-	/// v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (âˆš2, âˆš2, 0)
+	/// v1.rotate(45, ofVec3f(0, 0, 1)); // v2 is (¡Ì2, ¡Ì2, 0)
 	/// 
 	/// v1.set(1, 0, 0);
 	/// // then rotate around the y axis
-	/// v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (âˆš2, 0, âˆš2)
+	/// v1.rotate(45, ofVec3f(0, 1, 0)); // v3 is (¡Ì2, 0, ¡Ì2)
 	/// ~~~~
     ofVec3f& rotateRad( float angle, const ofVec3f& axis );
     
@@ -591,7 +591,7 @@ public:
 	/// ~~~~~{.cpp}
 	/// ofVec3f v( 1, 0, 0 );
 	/// v.rotateRad( 0, 0, HALF_PI ); // v is now (0, 1, 0)
-	/// v.rotateRad( PI/4, 0, 0 ); // v is now (0, âˆš2, âˆš2)
+	/// v.rotateRad( PI/4, 0, 0 ); // v is now (0, ¡Ì2, ¡Ì2)
 	/// ~~~~~
 	/// 
 	/// Watch out for gimbal lock when specifying multiple rotations in the same call.
@@ -775,7 +775,7 @@ public:
 	/// ofVec3f v1(5, 0, 0);
 	/// ofVec3f v1Normalized = v1.getNormalized(); // (1, 0, 0)
 	/// ofVec3f v2(5, 0, 5);
-	/// ofVec3f v2Normalized = v2.getNormalized(); // (âˆš2, 0, âˆš2)
+	/// ofVec3f v2Normalized = v2.getNormalized(); // (¡Ì2, 0, ¡Ì2)
 	/// ~~~~
 	ofVec3f  getNormalized() const;
    
@@ -790,7 +790,7 @@ public:
 	/// ofVec3f v1(5, 0, 0);
 	/// v1.normalize(); // v2 is now (1, 0, 0)
 	/// ofVec3f v2(5, 0, 5);
-	/// v2.normalize(); // v2 is now (âˆš2, 0, âˆš2)
+	/// v2.normalize(); // v2 is now (¡Ì2, 0, ¡Ì2)
 	/// ~~~~
 	/// 
   	ofVec3f& normalize();

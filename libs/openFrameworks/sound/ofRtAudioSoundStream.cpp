@@ -32,7 +32,7 @@ vector<ofSoundDevice> ofRtAudioSoundStream::getDeviceList() const{
 	shared_ptr<RtAudio> audioTemp;
 	try {
 		audioTemp = shared_ptr<RtAudio>(new RtAudio());
-	} catch (RtError &error) {
+	} catch (RtAudioError &error) {
 		error.printMessage();
 		return vector<ofSoundDevice>();
 	}
@@ -42,7 +42,7 @@ vector<ofSoundDevice> ofRtAudioSoundStream::getDeviceList() const{
 	for (int i=0; i< deviceCount; i++) {
 		try {
 			info = audioTemp->getDeviceInfo(i);
-		} catch (RtError &error) {
+		} catch (RtAudioError &error) {
 			ofLogError("ofRtAudioSoundStream") << "Error retrieving info for device " << i;
 			error.printMessage();
 			break;
@@ -104,7 +104,7 @@ bool ofRtAudioSoundStream::setup(int outChannels, int inChannels, int _sampleRat
 
 	try {
 		audio = shared_ptr<RtAudio>(new RtAudio());
-	}	catch (RtError &error) {
+	}	catch (RtAudioError &error) {
 		error.printMessage();
 		return false;
 	}
@@ -142,7 +142,7 @@ bool ofRtAudioSoundStream::setup(int outChannels, int inChannels, int _sampleRat
 		audio ->openStream( (nOutputChannels>0)?&outputParameters:NULL, (nInputChannels>0)?&inputParameters:NULL, RTAUDIO_FLOAT32,
 							sampleRate, &bufferFrames, &rtAudioCallback, this, &options);
 		audio->startStream();
-	} catch (RtError &error) {
+	} catch (RtAudioError &error) {
 		error.printMessage();
 		return false;
 	}
@@ -162,7 +162,7 @@ void ofRtAudioSoundStream::start(){
 
 	try{
 		audio->startStream();
-	} catch (RtError &error) {
+	} catch (RtAudioError &error) {
 		error.printMessage();
 	}
 }
@@ -175,7 +175,7 @@ void ofRtAudioSoundStream::stop(){
 		if(audio->isStreamRunning()) {
     		audio->stopStream();
 		}
-  	} catch (RtError &error) {
+  	} catch (RtAudioError &error) {
    		error.printMessage();
  	}
 }
@@ -188,7 +188,7 @@ void ofRtAudioSoundStream::close(){
 		if(audio->isStreamOpen()) {
     		audio->closeStream();
 		}
-  	} catch (RtError &error) {
+  	} catch (RtAudioError &error) {
    		error.printMessage();
  	}
 	soundOutputPtr	= NULL;
