@@ -158,6 +158,7 @@ CVAPI(int) cvCreateTrackbar2( const char* trackbar_name, const char* window_name
 /* retrieve or set trackbar position */
 CVAPI(int) cvGetTrackbarPos( const char* trackbar_name, const char* window_name );
 CVAPI(void) cvSetTrackbarPos( const char* trackbar_name, const char* window_name, int pos );
+CVAPI(void) cvSetTrackbarMax(const char* trackbar_name, const char* window_name, int maxval);
 
 enum
 {
@@ -362,7 +363,7 @@ enum
     CV_CAP_PROP_GAIN          =14,
     CV_CAP_PROP_EXPOSURE      =15,
     CV_CAP_PROP_CONVERT_RGB   =16,
-    CV_CAP_PROP_WHITE_BALANCE_BLUE_U =17,
+    CV_CAP_PROP_WHITE_BALANCE_U =17,
     CV_CAP_PROP_RECTIFICATION =18,
     CV_CAP_PROP_MONOCROME     =19,
     CV_CAP_PROP_SHARPNESS     =20,
@@ -373,7 +374,7 @@ enum
     CV_CAP_PROP_TEMPERATURE   =23,
     CV_CAP_PROP_TRIGGER       =24,
     CV_CAP_PROP_TRIGGER_DELAY =25,
-    CV_CAP_PROP_WHITE_BALANCE_RED_V =26,
+    CV_CAP_PROP_WHITE_BALANCE_V =26,
     CV_CAP_PROP_ZOOM          =27,
     CV_CAP_PROP_FOCUS         =28,
     CV_CAP_PROP_GUID          =29,
@@ -385,6 +386,7 @@ enum
     CV_CAP_PROP_ROLL          =35,
     CV_CAP_PROP_IRIS          =36,
     CV_CAP_PROP_SETTINGS      =37,
+    CV_CAP_PROP_BUFFERSIZE    =38,
 
     CV_CAP_PROP_AUTOGRAB      =1024, // property for highgui class CvCapture_Android only
     CV_CAP_PROP_SUPPORTED_PREVIEW_SIZES_STRING=1025, // readonly, tricky property, returns cpnst char* indeed
@@ -454,6 +456,8 @@ enum
     CV_CAP_PROP_ANDROID_FOCUS_DISTANCE_NEAR = 8006,
     CV_CAP_PROP_ANDROID_FOCUS_DISTANCE_OPTIMAL = 8007,
     CV_CAP_PROP_ANDROID_FOCUS_DISTANCE_FAR = 8008,
+    CV_CAP_PROP_ANDROID_EXPOSE_LOCK = 8009,
+    CV_CAP_PROP_ANDROID_WHITEBALANCE_LOCK = 8010,
 
     // Properties of cameras available through AVFOUNDATION interface
     CV_CAP_PROP_IOS_DEVICE_FOCUS = 9001,
@@ -534,6 +538,7 @@ enum
 enum
 {
     CV_CAP_ANDROID_FOCUS_MODE_AUTO = 0,
+    CV_CAP_ANDROID_FOCUS_MODE_CONTINUOUS_PICTURE,
     CV_CAP_ANDROID_FOCUS_MODE_CONTINUOUS_VIDEO,
     CV_CAP_ANDROID_FOCUS_MODE_EDOF,
     CV_CAP_ANDROID_FOCUS_MODE_FIXED,

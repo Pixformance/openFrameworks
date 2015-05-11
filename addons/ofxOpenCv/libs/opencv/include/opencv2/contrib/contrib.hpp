@@ -664,6 +664,7 @@ namespace cv
         *\param center the transformation center: where the output precision is maximal
         *\param R the number of rings of the cortical image (default value 70 pixel)
         *\param ro0 the radius of the blind spot (default value 3 pixel)
+        *\param interp interpolation algorithm
         *\param full \a 1 (default value) means that the retinal image (the inverse transform) is computed within the circumscribing circle.
         *            \a 0 means that the retinal image is computed within the inscribed circle.
         *\param S the number of sectors of the cortical image (default value 70 pixel).
@@ -948,6 +949,14 @@ namespace cv
         // Deserializes this object from a given cv::FileStorage.
         virtual void load(const FileStorage& fs) = 0;
 
+        // Sets additional information as pairs label - info.
+        void setLabelsInfo(const std::map<int, string>& labelsInfo);
+
+        // Gets string information by label
+        string getLabelInfo(const int &label);
+
+        // Gets labels by string
+        vector<int> getLabelsByString(const string& str);
     };
 
     CV_EXPORTS_W Ptr<FaceRecognizer> createEigenFaceRecognizer(int num_components = 0, double threshold = DBL_MAX);
