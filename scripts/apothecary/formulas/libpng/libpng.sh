@@ -28,10 +28,7 @@ function prepare() {
 	if [ "$TYPE" == "vs" ] ; then
 		#need to download this for the vs solution to build
 		if [ ! -e ../zlib ] ; then
-			curl -LO http://zlib.net/zlib-$VER.tar.gz
-			tar -xf zlib-$VER.tar.gz
-			mv zlib-$VER zlib
-			rm zlib-$VER.tar.gz
+			echoError "libpng needs zlib, please update that formula first"
 		fi
 		CURRENTPATH=`pwd`
 		cp -v $FORMULA_DIR/buildwin.cmd $CURRENTPATH/projects/visualc71
@@ -55,20 +52,10 @@ function build() {
 		make
 	elif [ "$TYPE" == "vs" ] ; then
 		if [ $ARCH == 32 ] ; then
-			#cmake -G "Visual Studio $VS_VER"
 			cd projects/visualc71
 			cmd //c buildwin.cmd Win32
-			#vs-upgrade "libpng.sln"
-			#sed /RuntimeLibrary=/s/2/0/ zlib.vcproj > fixed.vcproj
-			#mv fixed.vcproj zlib.vcproj
-			#sed /RuntimeLibrary=/s/2/0/ libpng.vcproj > fixed.vcproj
-			#mv fixed.vcproj libpng.vcproj
-			#vs-build "libpng.sln" Build "LIB Release"
-#			vs-build "libpng.sln" Build "DLL Release"
 			#cd ../..
 		elif [ $ARCH == 64 ] ; then
-#			cmake -G "Visual Studio $VS_VER Win64"
-#			vs-build "libpng.sln" Build "Release|x64"
 			cd projects/visualc71
 			cmd //c buildwin.cmd x64
 		fi
@@ -89,9 +76,7 @@ function build() {
 # executed inside the lib src dir, first arg $1 is the dest libs dir root
 function copy() {
 	if [ "$TYPE" == "vs" ] ; then
-		if [ $ARCH == 32 ] ; then
-			echo "to do copy vs build"
-		fi
+	    : noop
 	else
 		make install
 	fi

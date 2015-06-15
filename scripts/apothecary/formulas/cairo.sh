@@ -29,22 +29,28 @@ GIT_TAG=$VER
 
 # download the source code and unpack it into LIB_NAME
 function download() {
-	curl -LO http://cairographics.org/releases/cairo-$VER.tar.xz
 	if [ "$TYPE" == "vs" ] ; then
-		7z e cairo-$VER.tar.xz
-		7z x cairo-$VER.tar
-		mv cairo-$VER cairo
-		rm cairo-$VER.tar.xz
-		rm cairo-$VER.tar
-	else
-		tar -xf cairo-$VER.tar.xz
-		mv cairo-$VER cairo
-		rm cairo-$VER.tar.xz
+		# Download the xz extractor.
+		curl -LO http://tukaani.org/xz/xz-5.2.1-windows.zip
+
+		# Unzip xz and save it to the local directory.
+		unzip -j xz-5.2.1-windows.zip bin_x86-64/xz.exe -d .
 	fi
+
+	curl -LO http://cairographics.org/releases/cairo-$VER.tar.xz
+	tar -xf cairo-$VER.tar.xz
+	mv cairo-$VER cairo
+	rm cairo-$VER.tar.xz
+
 	# manually download dependencies
 	apothecaryDependencies download
+
 	if [ "$TYPE" == "vs" ] ; then
+		# Get the custom cairo visual studio solution.
 		git clone https://github.com/DomAmato/Cairo-VS
+
+		# Remove the xz extractor.
+		rm xz.exe
 	fi
 }
 
@@ -54,7 +60,6 @@ function prepare() {
 	
 		apothecaryDependencies prepare
 		
-		apothecaryDepend build libpng
 		apothecaryDepend build freetype
 		
 		cd ../Cairo-VS
@@ -65,8 +70,6 @@ function prepare() {
 		cp -Rv ../pixman/* pixman
 		cp -Rv ../zlib/* zlib
 		
-		cp -v ../libpng/projects/visualc71/Win32_LIB_Release/*.lib libs
-		cp -v ../libpng/projects/visualc71/Win32_LIB_Release/ZLib/*.lib libs
 		if [ $ARCH == 32 ] ; then
 			cp -v ../freetype/objs/vc2010/Win32/*.lib libs/freetype.lib
 		elif [ $ARCH == 64 ] ; then
@@ -148,35 +151,20 @@ function copy() {
 		mkdir -p $1/include/cairo
 
 		# copy the cairo headers
-		cp -Rv cairo/src/*.h $1/include/cairo
-
-		# make the path in the libs dir
-		mkdir -p $1/include/libpng16
-
-		# copy the cairo headers
-		cp -Rv libpng/*.h $1/include/libpng16
-
-		# make the path in the libs dir
-		mkdir -p $1/include/pixman-1
-
-		# copy the cairo headers
-		cp -Rv pixman/pixman/*.h $1/include/pixman-1
-
-		# copy the png symlinks
-		cp -v libpng/png*.h $1/include/
-
-		
+		cp -Rv cairo/src/*.h $1/include/cairo		
 		
 		if [ $ARCH == 32 ] ; then
 			# make the libs path 
 			mkdir -p $1/lib/$TYPE/Win32
 			cp -v Cairo-VS/projects/Release/cairo.lib $1/lib/$TYPE/Win32/cairo-static.lib
 			cp -v Cairo-VS/projects/Release/pixman.lib $1/lib/$TYPE/Win32/pixman-1.lib
+			cp -v Cairo-VS/libs/libpng.lib $1/lib/$TYPE/Win32
 		elif [ $ARCH == 64 ] ; then
 			# make the libs path 
 			mkdir -p $1/lib/$TYPE/x64
 			cp -v Cairo-VS/projects/x64/Release/cairo.lib $1/lib/$TYPE/x64/cairo-static.lib
 			cp -v Cairo-VS/projects/x64/Release/pixman.lib $1/lib/$TYPE/x64/pixman-1.lib
+			cp -v Cairo-VS/libs/libpng.lib $1/lib/$TYPE/x64
 		fi
 		cd cairo
 
@@ -187,30 +175,15 @@ function copy() {
 		# copy the cairo headers
 		cp -Rv $BUILD_ROOT_DIR/include/cairo/* $1/include/cairo
 
-		# make the path in the libs dir
-		mkdir -p $1/include/libpng16
-
-		# copy the cairo headers
-		cp -Rv $BUILD_ROOT_DIR/include/libpng16/* $1/include/libpng16
-
-		# make the path in the libs dir
-		mkdir -p $1/include/pixman-1
-
-		# copy the cairo headers
-		cp -Rv $BUILD_ROOT_DIR/include/pixman-1/* $1/include/pixman-1
-
-		# copy the png symlinks
-		cp -v $BUILD_ROOT_DIR/include/png* $1/include/
-
 		# make the libs path 
 		mkdir -p $1/lib/$TYPE
-
 	
 		if [ "$TYPE" == "osx" ] ; then
 			cp -v $BUILD_ROOT_DIR/lib/libcairo-script-interpreter.a $1/lib/$TYPE/cairo-script-interpreter.a
 		fi
 		cp -v $BUILD_ROOT_DIR/lib/libcairo.a $1/lib/$TYPE/cairo.a
 		cp -v $BUILD_ROOT_DIR/lib/libpixman-1.a $1/lib/$TYPE/pixman-1.a
+		cp -v $BUILD_ROOT_DIR/lib/libpng.a $1/lib/$TYPE/png.a
 	fi
 
 	# copy license files

@@ -3,7 +3,7 @@
 # openssl
 
 # define the version
-VER=1.0.2a
+VER=1.0.2c
 CSTANDARD=gnu11 # c89 | c99 | c11 | gnu11
 COMPILER_TYPE=clang # clang, gcc
 
@@ -22,7 +22,7 @@ function download() {
 	if [ "$TYPE" == "vs" ] ; then
 		#hasSha=$(cmd.exe /c 'call 'CertUtil' '-hashfile' '$FILENAME.tar.gz' 'SHA1'')
 		echo "TO DO: check against the SHA for windows"
-		tar -xvf $FILENAME.tar.gz
+		tar -xf $FILENAME.tar.gz
 		mv $FILENAME openssl
 		rm $FILENAME.tar.gz
 		rm $FILENAME.tar.gz.sha1
@@ -596,6 +596,9 @@ function copy() {
 	if [ -f $1/include/openssl/opensslconf_android.h ]; then
         cp $1/include/openssl/opensslconf_android.h /tmp/
     fi
+	if [ -f $1/include/openssl/opensslconf_vs.h ]; then
+        cp $1/include/openssl/opensslconf_vs.h /tmp/
+    fi
 	if [ -d $1/include/ ]; then
 	    rm -r $1/include/
 	fi
@@ -612,6 +615,9 @@ function copy() {
     fi
 	if [ -f /tmp/opensslconf_android.h ]; then
         mv /tmp/opensslconf_android.h $1/include/openssl/
+    fi
+	if [ -f /tmp/opensslconf_vs.h ]; then
+        mv /tmp/opensslconf_vs.h $1/include/openssl/
     fi
 	
 	# storing a copy of the include in lib/include/
