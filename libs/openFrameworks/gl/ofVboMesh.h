@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ofMesh.h"
+#include "3d/ofMesh.h"
 #include "ofVbo.h"
 
 class ofVboMesh: public ofMesh{

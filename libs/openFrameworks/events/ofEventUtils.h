@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 
-#include "Poco/PriorityEvent.h"
-#include "Poco/PriorityDelegate.h"
+#include "../poco/include/Poco/PriorityEvent.h"
+#include "../poco/include/Poco/PriorityDelegate.h"
 #include "ofDelegate.h"
 
 #include <stdio.h>

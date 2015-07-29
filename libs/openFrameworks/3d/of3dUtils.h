@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ofVectorMath.h"
+#include "math/ofVectorMath.h"
 
 /// \brief Draws x,y,z axes representing the current reference frame.
 ///

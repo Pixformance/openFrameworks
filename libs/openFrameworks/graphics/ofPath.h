@@ -1,11 +1,11 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofPoint.h"
-#include "ofColor.h"
+#include "utils/ofConstants.h"
+#include "types/ofPoint.h"
+#include "types/ofColor.h"
 #include "ofPolyline.h"
-#include "ofBaseTypes.h"
-#include "ofVboMesh.h"
+#include "types/ofBaseTypes.h"
+#include "gl/ofVboMesh.h"
 #include "ofTessellator.h"
 
 

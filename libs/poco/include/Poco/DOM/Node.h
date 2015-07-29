@@ -20,10 +20,10 @@
 #define DOM_Node_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/EventTarget.h"
-#include "Poco/XML/XMLString.h"
-#include "Poco/SAX/NamespaceSupport.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/EventTarget.h"
+#include "../poco/include/Poco/XML/XMLString.h"
+#include "../poco/include/Poco/SAX/NamespaceSupport.h"
 
 
 namespace Poco {

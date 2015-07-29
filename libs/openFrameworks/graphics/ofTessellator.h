@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofMesh.h"
-#include "ofTypes.h"
+#include "utils/ofConstants.h"
+#include "3d/ofMesh.h"
+#include "types/ofTypes.h"
 #include "ofPolyline.h"
-#include "tesselator.h"
+#include "../tess2/include/tesselator.h"
 
 
 class ofTessellator

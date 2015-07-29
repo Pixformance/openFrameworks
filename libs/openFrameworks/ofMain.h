@@ -2,89 +2,89 @@
 
 //--------------------------
 // utils
-#include "ofConstants.h"
-#include "ofFileUtils.h"
-#include "ofLog.h"
-#include "ofSystemUtils.h"
-#include "ofThread.h"
-#include "ofURLFileLoader.h"
-#include "ofUtils.h"
+#include "utils/ofConstants.h"
+#include "utils/ofFileUtils.h"
+#include "utils/ofLog.h"
+#include "utils/ofSystemUtils.h"
+#include "utils/ofThread.h"
+#include "utils/ofURLFileLoader.h"
+#include "utils/ofUtils.h"
+#include "utils/ofXml.h"
 
 //--------------------------
 // types
-#include "ofBaseTypes.h"
-#include "ofTypes.h"
-#include "ofColor.h"
-#include "ofPoint.h"
-#include "ofRectangle.h"
-#include "ofXml.h"
-#include "ofParameter.h"
-#include "ofParameterGroup.h"
+#include "types/ofBaseTypes.h"
+#include "types/ofTypes.h"
+#include "types/ofColor.h"
+#include "types/ofPoint.h"
+#include "types/ofRectangle.h"
+#include "types/ofParameter.h"
+#include "types/ofParameterGroup.h"
 
 //--------------------------
 // math
-#include "ofMath.h"
-#include "ofVectorMath.h"
+#include "math/ofMath.h"
+#include "math/ofVectorMath.h"
 
 //--------------------------
 // communication
 #if !defined( TARGET_OF_IOS ) & !defined(TARGET_ANDROID)
-	#include "ofSerial.h"
-	#include "ofArduino.h"
+	#include "communication/ofSerial.h"
+	#include "communication/ofArduino.h"
 #endif
 
 //--------------------------
 // gl
-#include "ofFbo.h"
-#include "ofGLRenderer.h"
-#include "ofGLUtils.h"
-#include "ofLight.h"
-#include "ofMaterial.h"
-#include "ofShader.h"
-#include "ofTexture.h"
-#include "ofVbo.h"
-#include "ofVboMesh.h"
-#include "ofGLProgrammableRenderer.h"
-#include "ofGLRenderer.h"
+#include "gl/ofFbo.h"
+#include "gl/ofGLRenderer.h"
+#include "gl/ofGLUtils.h"
+#include "gl/ofLight.h"
+#include "gl/ofMaterial.h"
+#include "gl/ofShader.h"
+#include "gl/ofTexture.h"
+#include "gl/ofVbo.h"
+#include "gl/ofVboMesh.h"
+#include "gl/ofGLProgrammableRenderer.h"
+#include "gl/ofGLRenderer.h"
 
 //--------------------------
 // graphics
 #if !defined( TARGET_OF_IOS ) & !defined(TARGET_ANDROID)
-#include "ofCairoRenderer.h"
+#include "graphics/ofCairoRenderer.h"
 #endif
-#include "ofGraphics.h"
-#include "ofImage.h"
-#include "ofPath.h"
-#include "ofPixels.h"
-#include "ofPolyline.h"
-#include "ofRendererCollection.h"
-#include "ofTessellator.h"
-#include "ofTrueTypeFont.h"
+#include "graphics/ofGraphics.h"
+#include "graphics/ofImage.h"
+#include "graphics/ofPath.h"
+#include "graphics/ofPixels.h"
+#include "graphics/ofPolyline.h"
+#include "graphics/ofRendererCollection.h"
+#include "graphics/ofTessellator.h"
+#include "graphics/ofTrueTypeFont.h"
 
 //--------------------------
 // app
-#include "ofBaseApp.h"
-#include "ofAppRunner.h"
+#include "app/ofBaseApp.h"
+#include "app/ofAppRunner.h"
 
 //--------------------------
 // audio
-#include "ofSoundStream.h"
-#include "ofSoundPlayer.h"
+#include "sound/ofSoundStream.h"
+#include "sound/ofSoundPlayer.h"
 
 //--------------------------
 // video
-#include "ofVideoGrabber.h"
-#include "ofVideoPlayer.h"
+#include "video/ofVideoGrabber.h"
+#include "video/ofVideoPlayer.h"
 
 //--------------------------
 // events
-#include "ofEvents.h"
+#include "events/ofEvents.h"
 
 //--------------------------
 // 3d
-#include "of3dUtils.h"
-#include "ofCamera.h"
-#include "ofEasyCam.h"
-#include "ofMesh.h"
-#include "ofNode.h"
+#include "3d/of3dUtils.h"
+#include "3d/ofCamera.h"
+#include "3d/ofEasyCam.h"
+#include "3d/ofMesh.h"
+#include "3d/ofNode.h"
 

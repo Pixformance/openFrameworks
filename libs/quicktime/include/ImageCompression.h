@@ -34,7 +34,7 @@
 #endif
 
 #ifndef __STANDARDFILE__
-#include <StandardFile.h>
+#include <../quicktime/include/StandardFile.h>
 #endif
 
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofPoint.h"
-#include "ofTypes.h"
+#include "types/ofPoint.h"
+#include "types/ofTypes.h"
 
 #if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
 #include <X11/Xlib.h>

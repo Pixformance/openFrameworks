@@ -20,7 +20,7 @@
 #define DOM_NodeIterator_INCLUDED
 
 
-#include "Poco/XML/XML.h"
+#include "../poco/include/Poco/XML/XML.h"
 
 
 namespace Poco {

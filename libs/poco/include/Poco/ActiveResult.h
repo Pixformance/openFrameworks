@@ -20,11 +20,11 @@
 #define Foundation_ActiveResult_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Mutex.h"
-#include "Poco/Event.h"
-#include "Poco/RefCountedObject.h"
-#include "Poco/Exception.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Mutex.h"
+#include "../poco/include/Poco/Event.h"
+#include "../poco/include/Poco/RefCountedObject.h"
+#include "../poco/include/Poco/Exception.h"
 #include <algorithm>
 
 
@@ -43,7 +43,7 @@ public:
 	ActiveResultHolder():
 		_pData(0),
 		_pExc(0),
-		_event(false)
+		_event(Event::EVENT_MANUALRESET)
 		/// Creates an ActiveResultHolder.
 	{
 	}
@@ -149,7 +149,7 @@ class ActiveResultHolder<void>: public RefCountedObject
 public:
 	ActiveResultHolder():
 		_pExc(0),
-		_event(false)
+		_event(Event::EVENT_MANUALRESET)
 		/// Creates an ActiveResultHolder.
 	{
 	}

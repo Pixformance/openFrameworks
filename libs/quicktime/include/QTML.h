@@ -18,23 +18,23 @@
 #define __QTML__
 
 #ifndef __MACTYPES__
-#include <MacTypes.h>
+#include <../quicktime/include/MacTypes.h>
 #endif
 
 #ifndef __MACMEMORY__
-#include <MacMemory.h>
+#include <../quicktime/include/MacMemory.h>
 #endif
 
 #ifndef __MACWINDOWS__
-#include <MacWindows.h>
+#include <../quicktime/include/MacWindows.h>
 #endif
 
 #ifndef __OSUTILS__
-#include <OSUtils.h>
+#include <../quicktime/include/OSUtils.h>
 #endif
 
 #ifndef __FILES__
-#include <Files.h>
+#include <../quicktime/include/Files.h>
 #endif
 
 

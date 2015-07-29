@@ -20,12 +20,12 @@
 #define Foundation_Event_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Exception.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Exception.h"
 
 
 #if defined(POCO_OS_FAMILY_WINDOWS)
-#include "Poco/Event_WIN32.h"
+#include "../poco/include/Poco/Event_WIN32.h"
 #elif defined(POCO_VXWORKS)
 #include "Poco/Event_VX.h"
 #else
@@ -46,11 +46,21 @@ class Foundation_API Event: private EventImpl
 	/// for an event to become signalled.
 {
 public:
-	Event(bool autoReset = true);
-		/// Creates the event. If autoReset is true,
+	enum EventType
+	{
+		EVENT_MANUALRESET = EVENT_MANUALRESET_IMPL, /// Manual reset event
+		EVENT_AUTORESET = EVENT_AUTORESET_IMPL      /// Auto-reset event
+	};
+
+	explicit Event(EventType type = EVENT_AUTORESET);
+		/// Creates the event. If type is EVENT_AUTORESET,
 		/// the event is automatically reset after
 		/// a wait() successfully returns.
-		
+
+	//@ deprecated
+	explicit Event(bool autoReset);
+		/// Please use Event::Event(EventType) instead.
+
 	~Event();
 		/// Destroys the event.
 

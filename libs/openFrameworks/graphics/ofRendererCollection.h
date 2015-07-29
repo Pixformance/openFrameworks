@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofBaseTypes.h"
-#include "ofGLRenderer.h"
+#include "types/ofBaseTypes.h"
+#include "gl/ofGLRenderer.h"
 
 class ofRendererCollection: public ofBaseRenderer{
 public:

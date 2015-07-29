@@ -22,7 +22,7 @@
 #endif
 
 #ifndef __MACERRORS__
-#include <MacErrors.h>
+#include <../quicktime/include/MacErrors.h>
 #endif
 
 

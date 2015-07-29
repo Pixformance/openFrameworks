@@ -20,8 +20,8 @@
 #define XML_XMLException_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/Exception.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/Exception.h"
 
 
 namespace Poco {

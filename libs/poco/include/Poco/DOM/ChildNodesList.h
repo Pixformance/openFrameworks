@@ -20,8 +20,8 @@
 #define DOM_ChildNodesList_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/NodeList.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/NodeList.h"
 
 
 namespace Poco {

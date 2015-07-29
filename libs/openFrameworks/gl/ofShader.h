@@ -7,13 +7,13 @@
  make sure to catch and report that error.
  */
 
-#include "ofConstants.h"
-#include "ofBaseTypes.h"
+#include "utils/ofConstants.h"
+#include "types/ofBaseTypes.h"
 #include "ofTexture.h"
-#include "ofMatrix4x4.h"
-#include "Poco/RegularExpression.h"
+#include "math/ofMatrix4x4.h"
+#include "../poco/include/Poco/RegularExpression.h"
 #include <map>
-#include "ofAppBaseWindow.h"
+#include "app/ofAppBaseWindow.h"
 
 class ofShader {
 public:

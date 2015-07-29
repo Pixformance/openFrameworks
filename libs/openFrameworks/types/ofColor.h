@@ -2,7 +2,7 @@
 
 
 #include <limits>
-#include "ofMath.h"
+#include "math/ofMath.h"
 
 
 /// \class ofColor_

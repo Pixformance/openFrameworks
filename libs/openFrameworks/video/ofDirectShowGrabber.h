@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofTexture.h"
-#include "ofBaseTypes.h"
-#include "ofPixels.h"
+#include "utils/ofConstants.h"
+#include "gl/ofTexture.h"
+#include "types/ofBaseTypes.h"
+#include "graphics/ofPixels.h"
 
 #ifdef OF_VIDEO_CAPTURE_DIRECTSHOW
-	#include "videoInput.h"
+	#include "../videoInput/include/videoInput.h"
 #endif
 
 

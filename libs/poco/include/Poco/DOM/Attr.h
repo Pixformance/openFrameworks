@@ -20,10 +20,10 @@
 #define DOM_Attr_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/AbstractNode.h"
-#include "Poco/DOM/Element.h"
-#include "Poco/XML/Name.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/AbstractNode.h"
+#include "../poco/include/Poco/DOM/Element.h"
+#include "../poco/include/Poco/XML/Name.h"
 
 
 namespace Poco {

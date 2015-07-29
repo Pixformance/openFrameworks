@@ -1,12 +1,12 @@
 #pragma once
 
 #include <vector>
-#include "ofPoint.h"
-#include "ofRectangle.h"
-#include "ofConstants.h"
+#include "types/ofPoint.h"
+#include "types/ofRectangle.h"
+#include "utils/ofConstants.h"
 #include "ofPath.h"
-#include "ofTexture.h"
-#include "ofMesh.h"
+#include "gl/ofTexture.h"
+#include "3d/ofMesh.h"
 
 //--------------------------------------------------
 typedef struct {

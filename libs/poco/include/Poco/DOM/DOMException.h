@@ -20,8 +20,8 @@
 #define DOM_DOMException_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/XML/XMLException.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/XML/XMLException.h"
 
 
 namespace Poco {

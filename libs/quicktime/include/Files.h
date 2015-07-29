@@ -30,17 +30,17 @@
 #endif
 
 #ifndef __TEXTCOMMON__
-#include <TextCommon.h>
+#include <../quicktime/include/TextCommon.h>
 #endif
 
 #ifndef __UTCUTILS__
-#include <UTCUtils.h>
+#include <../quicktime/include/UTCUtils.h>
 #endif
 
 
 /* Finder constants were moved to Finder.* */
 #ifndef __FINDER__
-#include <Finder.h>
+#include <../quicktime/include/Finder.h>
 #endif
 
 

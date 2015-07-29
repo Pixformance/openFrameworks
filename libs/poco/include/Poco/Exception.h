@@ -20,7 +20,7 @@
 #define Foundation_Exception_INCLUDED
 
 
-#include "Poco/Foundation.h"
+#include "../poco/include/Poco/Foundation.h"
 #include <stdexcept>
 
 

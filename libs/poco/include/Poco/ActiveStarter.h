@@ -20,9 +20,9 @@
 #define Foundation_ActiveStarter_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/ThreadPool.h"
-#include "Poco/ActiveRunnable.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/ThreadPool.h"
+#include "../poco/include/Poco/ActiveRunnable.h"
 
 
 namespace Poco {

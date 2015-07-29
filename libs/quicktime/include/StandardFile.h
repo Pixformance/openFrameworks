@@ -22,7 +22,7 @@
 #endif
 
 #ifndef __DIALOGS__
-#include <Dialogs.h>
+#include <../quicktime/include/Dialogs.h>
 #endif
 
 #ifndef __FILES__

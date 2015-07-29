@@ -30,11 +30,11 @@
 #endif
 
 #ifndef __IMAGECOMPRESSION__
-#include <ImageCompression.h>
+#include <../quicktime/include/ImageCompression.h>
 #endif
 
 #ifndef __MOVIES__
-#include <Movies.h>
+#include <../quicktime/include/Movies.h>
 #endif
 
 #ifndef __QUICKDRAW__
@@ -42,15 +42,15 @@
 #endif
 
 #ifndef __VIDEO__
-#include <Video.h>
+#include <../quicktime/include/Video.h>
 #endif
 
 #ifndef __SOUND__
-#include <Sound.h>
+#include <../quicktime/include/Sound.h>
 #endif
 
 #ifndef __QUICKTIMEMUSIC__
-#include <QuickTimeMusic.h>
+#include <../quicktime/include/QuickTimeMusic.h>
 #endif
 
 

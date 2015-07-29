@@ -20,9 +20,9 @@
 #define Foundation_Event_WIN32_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Exception.h"
-#include "Poco/UnWindows.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Exception.h"
+#include "../poco/include/Poco/UnWindows.h"
 
 
 namespace Poco {
@@ -30,8 +30,15 @@ namespace Poco {
 
 class Foundation_API EventImpl
 {
+public:
+	enum EventTypeImpl
+	{
+		EVENT_MANUALRESET_IMPL,
+		EVENT_AUTORESET_IMPL,
+	};
+
 protected:
-	EventImpl(bool autoReset);		
+	EventImpl(EventTypeImpl type);
 	~EventImpl();
 	void setImpl();
 	void waitImpl();

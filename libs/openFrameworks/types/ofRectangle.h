@@ -1,9 +1,9 @@
 #pragma once
 
 
-#include "ofConstants.h"
-#include "ofPoint.h"
-#include "ofLog.h"
+#include "utils/ofConstants.h"
+#include "types/ofPoint.h"
+#include "utils/ofLog.h"
 
 
 /// \brief A class representing a 2D rectangle.

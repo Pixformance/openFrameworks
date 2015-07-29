@@ -20,9 +20,9 @@
 #define Foundation_PriorityEvent_INCLUDED
 
 
-#include "Poco/AbstractEvent.h"
-#include "Poco/PriorityStrategy.h"
-#include "Poco/AbstractPriorityDelegate.h"
+#include "../poco/include/Poco/AbstractEvent.h"
+#include "../poco/include/Poco/PriorityStrategy.h"
+#include "../poco/include/Poco/AbstractPriorityDelegate.h"
 
 
 namespace Poco {

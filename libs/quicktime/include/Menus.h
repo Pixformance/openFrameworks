@@ -30,7 +30,7 @@
 #endif
 
 #ifndef __FONTS__
-#include <Fonts.h>
+#include <../quicktime/include/Fonts.h>
 #endif
 
 #ifndef __TEXTCOMMON__
@@ -38,7 +38,7 @@
 #endif
 
 #ifndef __PROCESSES__
-#include <Processes.h>
+#include <../quicktime/include/Processes.h>
 #endif
 
 #ifndef __APPLEEVENTS__

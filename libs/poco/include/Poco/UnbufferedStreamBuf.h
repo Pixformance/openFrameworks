@@ -20,8 +20,8 @@
 #define Foundation_UnbufferedStreamBuf_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/StreamUtil.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/StreamUtil.h"
 #include <streambuf>
 #include <iosfwd>
 #include <ios>

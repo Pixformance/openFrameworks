@@ -20,16 +20,16 @@
 #define XML_XMLWriter_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/SAX/ContentHandler.h"
-#include "Poco/SAX/LexicalHandler.h"
-#include "Poco/SAX/DTDHandler.h"
-#include "Poco/SAX/NamespaceSupport.h"
-#include "Poco/XML/XMLString.h"
-#include "Poco/XML/XMLStream.h"
-#include "Poco/XML/Name.h"
-#include "Poco/TextEncoding.h"
-#include "Poco/StreamConverter.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/SAX/ContentHandler.h"
+#include "../poco/include/Poco/SAX/LexicalHandler.h"
+#include "../poco/include/Poco/SAX/DTDHandler.h"
+#include "../poco/include/Poco/SAX/NamespaceSupport.h"
+#include "../poco/include/Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/XMLStream.h"
+#include "../poco/include/Poco/XML/Name.h"
+#include "../poco/include/Poco/TextEncoding.h"
+#include "../poco/include/Poco/StreamConverter.h"
 #include <vector>
 #include <map>
 

@@ -13,7 +13,7 @@
 #include "ofVec3f.h"
 #include "ofVec4f.h"
 #include "ofQuaternion.h"
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 #include <cmath>
 
 

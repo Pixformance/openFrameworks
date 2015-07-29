@@ -1,4 +1,4 @@
-#include "Poco/AbstractPriorityDelegate.h"
+#include "../poco/include/Poco/AbstractPriorityDelegate.h"
 
 class ofEventAttendedException: public Poco::Exception{
 

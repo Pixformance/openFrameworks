@@ -4,10 +4,10 @@
 #include <queue>
 
 #include "ofThread.h"
-#include "ofEvents.h"
+#include "events/ofEvents.h"
 #include "ofFileUtils.h"
 
-#include "Poco/Condition.h"
+#include "../poco/include/Poco/Condition.h"
 
 
 class ofHttpRequest{

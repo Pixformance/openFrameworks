@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofTexture.h"
-#include "ofBaseTypes.h"
-#include "ofTypes.h"
+#include "utils/ofConstants.h"
+#include "gl/ofTexture.h"
+#include "types/ofBaseTypes.h"
+#include "types/ofTypes.h"
 
 #ifdef OF_VIDEO_PLAYER_GSTREAMER
 	#include "ofGstVideoPlayer.h"

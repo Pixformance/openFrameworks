@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 #include "ofFileUtils.h"
-#include "ofTypes.h"
+#include "types/ofTypes.h"
 
 enum ofLogLevel{
 	OF_LOG_VERBOSE,

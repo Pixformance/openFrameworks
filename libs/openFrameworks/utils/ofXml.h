@@ -2,28 +2,29 @@
 #pragma once
 
 #include "ofMain.h"
+#include "types/ofBaseTypes.h"
 
 #include <numeric>
 
-#include <Poco/DOM/Document.h>
-#include <Poco/DOM/DocumentFragment.h>
-#include <Poco/DOM/Element.h>
-#include <Poco/DOM/DOMParser.h>
+#include <../poco/include/Poco/DOM/Document.h>
+#include <../poco/include/Poco/DOM/DocumentFragment.h>
+#include <../poco/include/Poco/DOM/Element.h>
+#include <../poco/include/Poco/DOM/DOMParser.h>
 
-#include <Poco/DOM/DOMException.h>
-#include <Poco/SAX/SAXException.h>
-#include <Poco/XML/XMLString.h>
-#include <Poco/XML/XMLWriter.h>
-#include <Poco/DOM/DOMParser.h>
-#include <Poco/DOM/DOMWriter.h>
-#include <Poco/DOM/Document.h>
-#include <Poco/DOM/Attr.h>
-#include <Poco/DOM/Node.h>
-#include <Poco/DOM/Text.h>
-#include <Poco/DOM/NodeIterator.h>
-#include <Poco/DOM/NodeFilter.h>
-#include <Poco/DOM/NamedNodeMap.h>  
-#include <Poco/DOM/ChildNodesList.h>
+#include <../poco/include/Poco/DOM/DOMException.h>
+#include <../poco/include/Poco/SAX/SAXException.h>
+#include <../poco/include/Poco/XML/XMLString.h>
+#include <../poco/include/Poco/XML/XMLWriter.h>
+#include <../poco/include/Poco/DOM/DOMParser.h>
+#include <../poco/include/Poco/DOM/DOMWriter.h>
+#include <../poco/include/Poco/DOM/Document.h>
+#include <../poco/include/Poco/DOM/Attr.h>
+#include <../poco/include/Poco/DOM/Node.h>
+#include <../poco/include/Poco/DOM/Text.h>
+#include <../poco/include/Poco/DOM/NodeIterator.h>
+#include <../poco/include/Poco/DOM/NodeFilter.h>
+#include <../poco/include/Poco/DOM/NamedNodeMap.h>  
+#include <../poco/include/Poco/DOM/ChildNodesList.h>
 
 class ofXml: public ofBaseFileSerializer {
     

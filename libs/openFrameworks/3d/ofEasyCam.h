@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofCamera.h"
-#include "ofEvents.h"
+#include "events/ofEvents.h"
 
 class ofEasyCam : public ofCamera {
 public:

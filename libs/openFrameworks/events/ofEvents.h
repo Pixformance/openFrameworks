@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofPoint.h"
+#include "utils/ofConstants.h"
+#include "types/ofPoint.h"
 #include "ofEventUtils.h"
 
 //-------------------------- mouse/key query

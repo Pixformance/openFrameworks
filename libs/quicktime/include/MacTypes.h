@@ -18,7 +18,7 @@
 #define __MACTYPES__
 
 #ifndef __CONDITIONALMACROS__
-#include <ConditionalMacros.h>
+#include <../quicktime/include/ConditionalMacros.h>
 #endif
 
 

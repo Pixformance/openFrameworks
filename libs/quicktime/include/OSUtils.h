@@ -32,17 +32,17 @@
 
 /*  GetTrapAddress and other trap table utilties were moved to Patches.h */
 #ifndef __PATCHES__
-#include <Patches.h>
+#include <../quicktime/include/Patches.h>
 #endif
 
 /*  Date and Time utilties were moved to DateTimeUtils.h */
 #ifndef __DATETIMEUTILS__
-#include <DateTimeUtils.h>
+#include <../quicktime/include/DateTimeUtils.h>
 #endif
 
 #if !TARGET_OS_MAC
 #ifndef __ENDIAN__
-#include <Endian.h>
+#include <../quicktime/include/Endian.h>
 #endif
 
 #endif  /* !TARGET_OS_MAC */

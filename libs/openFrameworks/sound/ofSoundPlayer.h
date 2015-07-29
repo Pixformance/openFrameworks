@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofTypes.h"
+#include "utils/ofConstants.h"
+#include "types/ofTypes.h"
 
 /// \todo: FIX THIS!!!!!!
 /// #warning FIX THIS.
@@ -28,7 +28,7 @@ void ofSoundUpdate();
 /// \return pointer to an FFT sample, sample size is equal to the nBands parameter.
 float * ofSoundGetSpectrum(int nBands);
 
-#include "ofBaseTypes.h"
+#include "types/ofBaseTypes.h"
 #include "ofBaseSoundPlayer.h"
 
 

@@ -22,11 +22,11 @@
 #endif
 
 #ifndef __APPLETALK__
-#include <AppleTalk.h>
+#include <../quicktime/include/AppleTalk.h>
 #endif
 
 #ifndef __FILES__
-#include <Files.h>
+#include <../quicktime/include/Files.h>
 #endif
 
 

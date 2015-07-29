@@ -1,5 +1,5 @@
 #pragma once
-#include "ofColor.h"
+#include "types/ofColor.h"
 
 /**
  * Material concept: "Anything graphical applied to the polygons"

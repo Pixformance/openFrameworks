@@ -20,7 +20,7 @@
 #define Foundation_ScopedLock_INCLUDED
 
 
-#include "Poco/Foundation.h"
+#include "../poco/include/Poco/Foundation.h"
 
 
 namespace Poco {
@@ -47,7 +47,14 @@ public:
 	
 	~ScopedLock()
 	{
-		_mutex.unlock();
+		try
+		{
+			_mutex.unlock();
+		}
+		catch (...)
+		{
+			poco_unexpected();
+		}
 	}
 
 private:
@@ -82,7 +89,14 @@ public:
 	
 	~ScopedLockWithUnlock()
 	{
-		unlock();
+		try
+		{
+			unlock();
+		}
+		catch (...)
+		{
+			poco_unexpected();
+		}
 	}
 	
 	void unlock()

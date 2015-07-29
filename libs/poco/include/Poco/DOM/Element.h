@@ -20,9 +20,9 @@
 #define DOM_Element_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/AbstractContainerNode.h"
-#include "Poco/XML/Name.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/AbstractContainerNode.h"
+#include "../poco/include/Poco/XML/Name.h"
 
 
 namespace Poco {

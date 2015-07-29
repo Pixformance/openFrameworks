@@ -20,7 +20,7 @@
 #define Foundation_Runnable_INCLUDED
 
 
-#include "Poco/Foundation.h"
+#include "../poco/include/Poco/Foundation.h"
 
 
 namespace Poco {

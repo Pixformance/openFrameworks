@@ -20,9 +20,9 @@
 #define Foundation_PriorityExpire_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Timestamp.h"
-#include "Poco/AbstractPriorityDelegate.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Timestamp.h"
+#include "../poco/include/Poco/AbstractPriorityDelegate.h"
 
 
 namespace Poco {
@@ -109,6 +109,7 @@ private:
 	PriorityExpire();
 };
 
+
 template <>
 class PriorityExpire<void>: public AbstractPriorityDelegate<void>
 	/// Decorator for AbstractPriorityDelegate adding automatic
@@ -188,6 +189,8 @@ protected:
 private:
 	PriorityExpire();
 };
+
+
 } // namespace Poco
 
 

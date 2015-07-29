@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 
 #if defined (TARGET_WIN32) || defined (TARGET_OSX)
 
@@ -11,11 +11,11 @@
 	#include <CoreServices/CoreServices.h>
 	#include <ApplicationServices/ApplicationServices.h>
 #else
-	#include <QTML.h>
-	#include <FixMath.h>
-	#include <QuickTimeComponents.h>
-	#include <TextUtils.h>
-	#include <MediaHandlers.h>
+	#include <../quicktime/include/QTML.h>
+	#include <../quicktime/include/FixMath.h>
+	#include <../quicktime/include/QuickTimeComponents.h>
+	#include <../quicktime/include/TextUtils.h>
+	#include <../quicktime/include/MediaHandlers.h>
 	//#include <MoviesFormat.h>
 #endif
 

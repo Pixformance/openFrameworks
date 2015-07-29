@@ -9,7 +9,7 @@
 	#include <shellapi.h>
 #endif
 
-#include "Poco/Path.h"
+#include "../poco/include/Poco/Path.h"
 
 
 /// \brief Reset the elapsed time counter.

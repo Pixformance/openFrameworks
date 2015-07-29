@@ -26,7 +26,7 @@
 #endif
 
 #ifndef __SCRIPT__
-#include <Script.h>
+#include <../quicktime/include/Script.h>
 #endif
 
 

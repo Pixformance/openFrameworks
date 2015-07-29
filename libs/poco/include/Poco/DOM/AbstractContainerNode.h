@@ -20,8 +20,8 @@
 #define DOM_AbstractContainerNode_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/AbstractNode.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/AbstractNode.h"
 
 
 namespace Poco {

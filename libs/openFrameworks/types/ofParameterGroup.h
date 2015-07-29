@@ -9,9 +9,9 @@
 #define OFXPARAMETERGROUP_H_
 
 #include <map>
-#include "Poco/Any.h"
-#include "ofConstants.h"
-#include "ofLog.h"
+#include "../poco/include/Poco/Any.h"
+#include "utils/ofConstants.h"
+#include "utils/ofLog.h"
 #include "ofParameter.h"
 #include "ofTypes.h"
 

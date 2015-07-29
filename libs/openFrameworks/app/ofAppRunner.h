@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofPoint.h"
-#include "ofRectangle.h"
-#include "ofTypes.h"
+#include "utils/ofConstants.h"
+#include "types/ofPoint.h"
+#include "types/ofRectangle.h"
+#include "types/ofTypes.h"
 
 class ofAppBaseWindow;
 class ofBaseApp;

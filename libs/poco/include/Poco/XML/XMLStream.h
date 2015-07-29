@@ -20,7 +20,7 @@
 #define XML_XMLStream_INCLUDED
 
 
-#include "Poco/XML/XML.h"
+#include "../poco/include/Poco/XML/XML.h"
 #include <istream>
 #include <ostream>
 

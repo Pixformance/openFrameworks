@@ -4,12 +4,12 @@
 
 #pragma once
 
-#include "ofVec3f.h"
-#include "ofVec2f.h"
-#include "ofColor.h"
-#include "ofUtils.h"
-#include "ofConstants.h"
-#include "ofGLUtils.h"
+#include "math/ofVec3f.h"
+#include "math/ofVec2f.h"
+#include "types/ofColor.h"
+#include "utils/ofUtils.h"
+#include "utils/ofConstants.h"
+#include "gl/ofGLUtils.h"
 
 class ofMeshFace;
 

@@ -8,9 +8,9 @@
 #ifndef OFGLUTILS_H_
 #define OFGLUTILS_H_
 
-#include "ofConstants.h"
-#include "ofTypes.h"
-#include "ofPixels.h"
+#include "utils/ofConstants.h"
+#include "types/ofTypes.h"
+#include "graphics/ofPixels.h"
 
 class ofShader;
 class ofGLProgrammableRenderer;

@@ -7,10 +7,10 @@
 //
 #pragma once
 
-#include "ofVboMesh.h"
-#include "ofRectangle.h"
+#include "gl/ofVboMesh.h"
+#include "types/ofRectangle.h"
 #include "ofNode.h"
-#include "ofTexture.h"
+#include "gl/ofTexture.h"
 #include <map>
 
 

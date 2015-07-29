@@ -22,11 +22,11 @@
 #endif
 
 #ifndef __NUMBERFORMATTING__
-#include <NumberFormatting.h>
+#include <../quicktime/include/NumberFormatting.h>
 #endif
 
 #ifndef __STRINGCOMPARE__
-#include <StringCompare.h>
+#include <../quicktime/include/StringCompare.h>
 #endif
 
 #ifndef __DATETIMEUTILS__

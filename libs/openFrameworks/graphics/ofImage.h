@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ofFileUtils.h"
-#include "ofTexture.h"
+#include "utils/ofFileUtils.h"
+#include "gl/ofTexture.h"
 #include "ofPixels.h"
-#include "ofBaseTypes.h"
-#include "ofConstants.h"
+#include "types/ofBaseTypes.h"
+#include "utils/ofConstants.h"
 
 /// \todo
 enum ofImageQualityType {

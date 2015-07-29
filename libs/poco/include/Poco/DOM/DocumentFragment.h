@@ -20,9 +20,9 @@
 #define DOM_DocumentFragment_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/AbstractContainerNode.h"
-#include "Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/AbstractContainerNode.h"
+#include "../poco/include/Poco/XML/XMLString.h"
 
 
 namespace Poco {

@@ -8,15 +8,15 @@
 
 #pragma once
 
-#include "ofConstants.h"
-#include "ofColor.h"
-#include "ofPoint.h"
-#include "ofMatrix4x4.h"
-#include "ofRectangle.h"
-#include "ofTypes.h"
-#include "ofBaseTypes.h"
-#include "ofGLRenderer.h"
-#include "of3dPrimitives.h"
+#include "utils/ofConstants.h"
+#include "types/ofColor.h"
+#include "types/ofPoint.h"
+#include "math/ofMatrix4x4.h"
+#include "types/ofRectangle.h"
+#include "types/ofTypes.h"
+#include "types/ofBaseTypes.h"
+#include "gl/ofGLRenderer.h"
+#include "3d/of3dPrimitives.h"
 
 
 // Grid Plane - drawn from the center //

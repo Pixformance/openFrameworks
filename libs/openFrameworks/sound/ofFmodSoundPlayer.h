@@ -1,14 +1,14 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 
 
 #include "ofBaseSoundPlayer.h"
 
 
 extern "C" {
-#include "fmod.h"
-#include "fmod_errors.h"
+#include "../fmodex/include/fmod.h"
+#include "../fmodex/include/fmod_errors.h"
 }
 
 //		TO DO :

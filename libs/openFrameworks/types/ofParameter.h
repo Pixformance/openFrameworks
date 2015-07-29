@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ofEvents.h"
+#include "events/ofEvents.h"
 #include "ofTypes.h"
-#include "ofUtils.h"
+#include "utils/ofUtils.h"
 
 template<typename ParameterType>
 class ofParameter;

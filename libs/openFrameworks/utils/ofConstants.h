@@ -96,9 +96,9 @@ enum ofTargetPlatform{
 
 	#include <windows.h>
 	#define GLEW_STATIC
-	#include "GL\glew.h"
-	#include "GL\wglew.h"
-   	#include "glu.h"
+	#include "..\glew\include\GL\glew.h"
+	#include "..\glew\include\GL\wglew.h"
+   	#include "..\glu\include\glu.h"
 	#define __WINDOWS_DS__
 	#define __WINDOWS_MM__
 	#if (_MSC_VER)       // microsoft visual studio
@@ -226,7 +226,7 @@ enum ofTargetPlatform{
 	//typedef GLuint ofIndexType;
 #endif
 
-#include "tesselator.h"
+#include "..\tess2\include\tesselator.h"
 typedef TESSindex ofIndexType;
 
 

@@ -18,15 +18,15 @@
 #define __NUMBERFORMATTING__
 
 #ifndef __CONDITIONALMACROS__
-#include <ConditionalMacros.h>
+#include <../quicktime/include/ConditionalMacros.h>
 #endif
 
 #ifndef __MACTYPES__
-#include <MacTypes.h>
+#include <../quicktime/include/MacTypes.h>
 #endif
 
 #ifndef __INTLRESOURCES__
-#include <IntlResources.h>
+#include <../quicktime/include/IntlResources.h>
 #endif
 
 

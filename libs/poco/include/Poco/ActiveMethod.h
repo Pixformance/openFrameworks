@@ -20,11 +20,11 @@
 #define Foundation_ActiveMethod_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/ActiveResult.h"
-#include "Poco/ActiveRunnable.h"
-#include "Poco/ActiveStarter.h"
-#include "Poco/AutoPtr.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/ActiveResult.h"
+#include "../poco/include/Poco/ActiveRunnable.h"
+#include "../poco/include/Poco/ActiveStarter.h"
+#include "../poco/include/Poco/AutoPtr.h"
 
 
 namespace Poco {

@@ -10,9 +10,9 @@
 
 #include <stack>
 #include "ofConstants.h"
-#include "ofRectangle.h"
-#include "ofGraphics.h"
-#include "ofMatrix4x4.h"
+#include "types/ofRectangle.h"
+#include "graphics/ofGraphics.h"
+#include "math/ofMatrix4x4.h"
 
 class ofAppBaseWindow;
 class ofFbo;

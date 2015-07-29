@@ -20,8 +20,8 @@
 #define Foundation_AbstractPriorityDelegate_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/AbstractDelegate.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/AbstractDelegate.h"
 
 
 namespace Poco {

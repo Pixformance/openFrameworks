@@ -30,7 +30,7 @@
 #endif
 
 #ifndef __CODEFRAGMENTS__
-#include <CodeFragments.h>
+#include <../quicktime/include/CodeFragments.h>
 #endif
 
 

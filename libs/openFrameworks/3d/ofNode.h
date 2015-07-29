@@ -1,9 +1,9 @@
 
 #pragma once
 
-#include "ofVectorMath.h"
+#include "math/ofVectorMath.h"
 #include "of3dUtils.h"
-#include "ofGraphics.h"
+#include "graphics/ofGraphics.h"
 
 
 // a generic 3d object in space with transformation (position, rotation, scale)

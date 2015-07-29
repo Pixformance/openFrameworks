@@ -12,11 +12,11 @@
 #pragma once
 #include "ofPoint.h"
 #include "ofRectangle.h"
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 #include "ofColor.h"
-#include "ofMesh.h"
-#include "ofPixels.h"
-#include "ofMatrix4x4.h"
+#include "3d/ofMesh.h"
+#include "graphics/ofPixels.h"
+#include "math/ofMatrix4x4.h"
 #include "ofTypes.h"
 
 class ofAbstractParameter;

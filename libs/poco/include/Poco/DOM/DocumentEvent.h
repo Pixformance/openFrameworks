@@ -20,8 +20,8 @@
 #define DOM_DocumentEvent_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/XML/XMLString.h"
 
 
 namespace Poco {

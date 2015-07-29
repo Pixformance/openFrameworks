@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofColor.h"
-#include "ofPoint.h"
-#include "ofMatrix4x4.h"
-#include "ofRectangle.h"
-#include "ofTypes.h"
-#include "ofBaseTypes.h"
+#include "utils/ofConstants.h"
+#include "types/ofColor.h"
+#include "types/ofPoint.h"
+#include "math/ofMatrix4x4.h"
+#include "types/ofRectangle.h"
+#include "types/ofTypes.h"
+#include "types/ofBaseTypes.h"
 
 #define  	CIRC_RESOLUTION		    22				// 22 pts for a circle...
 

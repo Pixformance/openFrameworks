@@ -20,13 +20,13 @@
 #define DOM_Document_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/AbstractContainerNode.h"
-#include "Poco/DOM/DocumentEvent.h"
-#include "Poco/DOM/Element.h"
-#include "Poco/XML/XMLString.h"
-#include "Poco/XML/NamePool.h"
-#include "Poco/AutoReleasePool.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/AbstractContainerNode.h"
+#include "../poco/include/Poco/DOM/DocumentEvent.h"
+#include "../poco/include/Poco/DOM/Element.h"
+#include "../poco/include/Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/NamePool.h"
+#include "../poco/include/Poco/AutoReleasePool.h"
 
 
 namespace Poco {

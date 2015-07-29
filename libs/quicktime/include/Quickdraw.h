@@ -18,7 +18,7 @@
 #define __QUICKDRAW__
 
 #ifndef __COMPONENTS__
-#include <Components.h>
+#include <../quicktime/include/Components.h>
 #endif
 
 #ifndef __MACTYPES__
@@ -30,7 +30,7 @@
 #endif
 
 #ifndef __QUICKDRAWTEXT__
-#include <QuickdrawText.h>
+#include <../quicktime/include/QuickdrawText.h>
 #endif
 
 

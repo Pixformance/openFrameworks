@@ -20,10 +20,10 @@
 #define DOM_AbstractNode_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/Node.h"
-#include "Poco/DOM/MutationEvent.h"
-#include "Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/Node.h"
+#include "../poco/include/Poco/DOM/MutationEvent.h"
+#include "../poco/include/Poco/XML/XMLString.h"
 
 
 namespace Poco {

@@ -26,11 +26,11 @@
 #endif
 
 #ifndef __NOTIFICATION__
-#include <Notification.h>
+#include <../quicktime/include/Notification.h>
 #endif
 
 #ifndef __EVENTS__
-#include <Events.h>
+#include <../quicktime/include/Events.h>
 #endif
 
 /*
@@ -38,7 +38,7 @@
             messages has moved to AEDataModel.h
 */
 #ifndef __AEDATAMODEL__
-#include <AEDataModel.h>
+#include <../quicktime/include/AEDataModel.h>
 #endif
 
 

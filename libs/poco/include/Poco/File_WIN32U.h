@@ -20,8 +20,8 @@
 #define Foundation_File_WIN32U_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Timestamp.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Timestamp.h"
 
 
 namespace Poco {

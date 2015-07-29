@@ -20,8 +20,8 @@
 #define DOM_MutationEvent_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/Event.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/Event.h"
 
 
 namespace Poco {

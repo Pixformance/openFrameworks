@@ -20,8 +20,8 @@
 #define DOM_DOMParser_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/SAX/SAXParser.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/SAX/SAXParser.h"
 
 
 namespace Poco {

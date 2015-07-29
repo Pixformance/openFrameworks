@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "ofRectangle.h"
-#include "ofAppRunner.h"
+#include "types/ofRectangle.h"
+#include "app/ofAppRunner.h"
 #include "ofNode.h"
 
 /// \todo Use the public API of ofNode for all transformations

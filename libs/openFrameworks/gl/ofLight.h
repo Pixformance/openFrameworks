@@ -12,9 +12,9 @@
 
 #pragma once
 
-#include "ofNode.h"
-#include "ofColor.h"
-#include "of3dGraphics.h"
+#include "3d/ofNode.h"
+#include "types/ofColor.h"
+#include "graphics/of3dGraphics.h"
 
 #define OF_MAX_LIGHTS		8		// max number of lights allowed by default opengl
 

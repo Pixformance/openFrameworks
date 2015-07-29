@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 
 
 class ofMatrix3x3 {

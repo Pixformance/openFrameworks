@@ -20,9 +20,9 @@
 #define DOM_Text_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/DOM/CharacterData.h"
-#include "Poco/XML/XMLString.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/DOM/CharacterData.h"
+#include "../poco/include/Poco/XML/XMLString.h"
 
 
 namespace Poco {

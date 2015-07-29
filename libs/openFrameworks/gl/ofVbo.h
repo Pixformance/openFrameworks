@@ -1,11 +1,11 @@
 //TODO: Add edge flags?
 
 #pragma once
-#include "ofConstants.h"
-#include "ofVec3f.h"
-#include "ofColor.h"
-#include "ofUtils.h"
-#include "ofMesh.h"
+#include "utils/ofConstants.h"
+#include "math/ofVec3f.h"
+#include "types/ofColor.h"
+#include "utils/ofUtils.h"
+#include "3d/ofMesh.h"
 #include "ofGLUtils.h"
 #include <map>
 

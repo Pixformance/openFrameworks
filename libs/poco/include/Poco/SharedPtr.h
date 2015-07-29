@@ -20,9 +20,9 @@
 #define Foundation_SharedPtr_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/Exception.h"
-#include "Poco/AtomicCounter.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/Exception.h"
+#include "../poco/include/Poco/AtomicCounter.h"
 #include <algorithm>
 
 
@@ -143,7 +143,14 @@ public:
 
 	~SharedPtr()
 	{
-		release();
+		try
+		{
+			release();
+		}
+		catch (...)
+		{
+			poco_unexpected();
+		}
 	}
 
 	SharedPtr& assign(C* ptr)

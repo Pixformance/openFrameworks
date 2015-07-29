@@ -1,10 +1,10 @@
 #pragma once
-#include "ofBaseTypes.h"
-#include "ofPolyline.h"
-#include "ofMatrix4x4.h"
+#include "types/ofBaseTypes.h"
+#include "graphics/ofPolyline.h"
+#include "math/ofMatrix4x4.h"
 #include <stack>
-#include "ofGraphics.h"
-#include "ofMatrixStack.h"
+#include "graphics/ofGraphics.h"
+#include "utils/ofMatrixStack.h"
 
 class ofShapeTessellation;
 class ofMesh;

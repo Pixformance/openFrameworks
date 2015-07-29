@@ -1,8 +1,8 @@
 #pragma once
-#include "ofPoint.h"
-#include "ofConstants.h"
+#include "types/ofPoint.h"
+#include "utils/ofConstants.h"
 #include <deque>
-#include "ofRectangle.h"
+#include "types/ofRectangle.h"
 
 // ofPolyline
 // A line composed of straight line segments.

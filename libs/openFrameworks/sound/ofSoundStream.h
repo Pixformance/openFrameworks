@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofConstants.h"
-#include "ofBaseTypes.h"
-#include "ofBaseApp.h"
-#include "ofTypes.h"
+#include "utils/ofConstants.h"
+#include "types/ofBaseTypes.h"
+#include "app/ofBaseApp.h"
+#include "types/ofTypes.h"
 #include "ofBaseSoundStream.h"
 
 #ifdef OF_SOUNDSTREAM_RTAUDIO

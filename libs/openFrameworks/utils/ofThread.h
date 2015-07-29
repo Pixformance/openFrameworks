@@ -1,11 +1,11 @@
 #pragma once
 
 
-#include "Poco/AtomicCounter.h"
-#include "Poco/Thread.h"
-#include "Poco/Runnable.h"
+#include "../poco/include/Poco/AtomicCounter.h"
+#include "../poco/include/Poco/Thread.h"
+#include "../poco/include/Poco/Runnable.h"
 #include "ofConstants.h"
-#include "ofTypes.h"
+#include "types/ofTypes.h"
 
 
 /// \class ofThread

@@ -22,7 +22,7 @@
 #endif
 
 #ifndef __QUICKDRAW__
-#include <Quickdraw.h>
+#include <../quicktime/include/Quickdraw.h>
 #endif
 
 #ifndef __MACTYPES__

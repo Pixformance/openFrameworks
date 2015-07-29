@@ -20,7 +20,7 @@
 #define Foundation_StreamUtil_INCLUDED
 
 
-#include "Poco/Foundation.h"
+#include "../poco/include/Poco/Foundation.h"
 
 
 // poco_ios_init

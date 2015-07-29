@@ -22,7 +22,7 @@
 #endif
 
 #ifndef __MIXEDMODE__
-#include <MixedMode.h>
+#include <../quicktime/include/MixedMode.h>
 #endif
 
 

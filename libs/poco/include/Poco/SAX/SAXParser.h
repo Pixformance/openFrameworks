@@ -20,9 +20,9 @@
 #define SAX_SAXParser_INCLUDED
 
 
-#include "Poco/XML/XML.h"
-#include "Poco/SAX/XMLReader.h"
-#include "Poco/XML/ParserEngine.h"
+#include "../poco/include/Poco/XML/XML.h"
+#include "../poco/include/Poco/SAX/XMLReader.h"
+#include "../poco/include/Poco/XML/ParserEngine.h"
 
 
 namespace Poco {

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ofPoint.h"
-#include "ofEvents.h"
-#include "ofBaseTypes.h"
+#include "types/ofPoint.h"
+#include "events/ofEvents.h"
+#include "types/ofBaseTypes.h"
 
 class ofBaseApp : public ofBaseSoundInput, public ofBaseSoundOutput{
 

@@ -20,9 +20,9 @@
 #define Foundation_StreamConverter_INCLUDED
 
 
-#include "Poco/Foundation.h"
-#include "Poco/TextEncoding.h"
-#include "Poco/UnbufferedStreamBuf.h"
+#include "../poco/include/Poco/Foundation.h"
+#include "../poco/include/Poco/TextEncoding.h"
+#include "../poco/include/Poco/UnbufferedStreamBuf.h"
 #include <istream>
 #include <ostream>
 

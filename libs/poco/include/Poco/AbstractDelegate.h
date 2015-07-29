@@ -20,7 +20,7 @@
 #define Foundation_AbstractDelegate_INCLUDED
 
 
-#include "Poco/Foundation.h"
+#include "../poco/include/Poco/Foundation.h"
 
 
 namespace Poco {
@@ -65,6 +65,7 @@ public:
 	}
 };
 
+
 template <> 
 class AbstractDelegate<void>
 	/// Base class for Delegate and Expire.
@@ -103,6 +104,7 @@ public:
 		return this;
 	}
 };
+
 
 } // namespace Poco
 

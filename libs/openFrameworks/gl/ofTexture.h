@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofPoint.h"
-#include "ofRectangle.h"
-#include "ofBaseTypes.h"
-#include "ofConstants.h"
+#include "types/ofPoint.h"
+#include "types/ofRectangle.h"
+#include "types/ofBaseTypes.h"
+#include "utils/ofConstants.h"
 #include "ofVboMesh.h"
 
 /// \brief Check whether OF is using ARB rectangular or square textures.

@@ -22,27 +22,27 @@
 #endif
 
 #ifndef __ALIASES__
-#include <Aliases.h>
+#include <../quicktime/include/Aliases.h>
 #endif
 
 #ifndef __APPLEEVENTS__
-#include <AppleEvents.h>
+#include <../quicktime/include/AppleEvents.h>
 #endif
 
 #ifndef __COLLECTIONS__
-#include <Collections.h>
+#include <../quicktime/include/Collections.h>
 #endif
 
 #ifndef __DRAG__
-#include <Drag.h>
+#include <../quicktime/include/Drag.h>
 #endif
 
 #ifndef __EVENTS__
-#include <Events.h>
+#include <../quicktime/include/Events.h>
 #endif
 
 #ifndef __MENUS__
-#include <Menus.h>
+#include <../quicktime/include/Menus.h>
 #endif
 
 #ifndef __MIXEDMODE__
@@ -50,23 +50,23 @@
 #endif
 
 #ifndef __QDOFFSCREEN__
-#include <QDOffscreen.h>
+#include <../quicktime/include/QDOffscreen.h>
 #endif
 
 #ifndef __QUICKDRAW__
-#include <Quickdraw.h>
+#include <../quicktime/include/Quickdraw.h>
 #endif
 
 #ifndef __TEXTCOMMON__
-#include <TextCommon.h>
+#include <../quicktime/include/TextCommon.h>
 #endif
 
 #ifndef __ICONS__
-#include <Icons.h>
+#include <../quicktime/include/Icons.h>
 #endif
 
 #ifndef __MACERRORS__
-#include <MacErrors.h>
+#include <../quicktime/include/MacErrors.h>
 #endif
 
 

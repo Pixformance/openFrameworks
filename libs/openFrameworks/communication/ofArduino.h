@@ -29,7 +29,7 @@
 #include <string>
 #include <iostream>
 
-#include "ofEvents.h"
+#include "events/ofEvents.h"
 
 #include "ofSerial.h"
 

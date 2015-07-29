@@ -34,11 +34,11 @@
 #endif
 
 #ifndef __TEXTEDIT__
-#include <TextEdit.h>
+#include <../quicktime/include/TextEdit.h>
 #endif
 
 #ifndef __CONTROLS__
-#include <Controls.h>
+#include <../quicktime/include/Controls.h>
 #endif
 
 #ifndef __MACERRORS__

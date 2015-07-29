@@ -22,7 +22,7 @@
 #endif
 
 #ifndef __OSUTILS__
-#include <OSUtils.h>
+#include <../quicktime/include/OSUtils.h>
 #endif
 
 
