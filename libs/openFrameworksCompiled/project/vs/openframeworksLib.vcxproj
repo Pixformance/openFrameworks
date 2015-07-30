@@ -48,10 +48,10 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)Debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>..\..\..\..\libs\poco\lib\vs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\..\..\libs\poco\lib\vs;..\..\..\..\libs\cairo\lib\vs;..\..\..\..\libs\fmodex\lib\vs;..\..\..\..\libs\FreeImage\lib\vs\;..\..\..\..\libs\freetype\lib\vs\;..\..\..\..\libs\glew\lib\vs\;..\..\..\..\libs\glfw\lib\vs\;..\..\..\..\libs\libpng\;..\..\..\..\libs\quicktime\lib\vs\;..\..\..\..\libs\tess2\lib\vs\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>..\..\..\..\libs\poco\lib\vs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\..\..\libs\poco\lib\vs;..\..\..\..\libs\cairo\lib\vs;..\..\..\..\libs\fmodex\lib\vs;..\..\..\..\libs\FreeImage\lib\vs\;..\..\..\..\libs\freetype\lib\vs\;..\..\..\..\libs\glew\lib\vs\;..\..\..\..\libs\glfw\lib\vs\;..\..\..\..\libs\libpng\;..\..\..\..\libs\quicktime\lib\vs\;..\..\..\..\libs\tess2\lib\vs\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -68,7 +68,7 @@
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>crypt32.lib;Ws2_32.lib;msimg32.lib;Netapi32.lib;Iphlpapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>crypt32.lib;Ws2_32.lib;msimg32.lib;Netapi32.lib;freetype252_D.lib;Iphlpapi.lib;cairo-staticd.lib;fmodex_vc.lib;FreeImaged.lib;glfw3d.lib;libpngd.lib;PocoFoundationmtd.lib;PocoCryptomtd.lib;PocoJSONmtd.lib;PocoNetmtd.lib;PocoNetSSLmtd.lib;PocoUtilmtd.lib;PocoXMLmtd.lib;libeay32MTd.lib;ssleay32MTd.lib;glew32sd.lib;qtmlClient.lib;tess2d.lib</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
       <Command>
@@ -98,7 +98,7 @@
       </Command>
     </PostBuildEvent>
     <Lib>
-      <AdditionalDependencies>crypt32.lib;Ws2_32.lib;msimg32.lib;Netapi32.lib;Iphlpapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>crypt32.lib;Ws2_32.lib;msimg32.lib;Netapi32.lib;Iphlpapi.lib;cairo-static.lib;fmodex_vc.lib;FreeImage.lib;freetype252.lib;glew32s.lib;glfw3.lib;libpng.lib;libeay32MT.lib;PocoCryptomt.lib;PocoFoundationmt.lib;PocoJSONmt.lib;PocoNetmt.lib;PocoNetSSLmt.lib;PocoUtilmt.lib;PocoXMLmt.lib;ssleay32MT.lib;qtmlClient.lib;tess2.lib</AdditionalDependencies>
     </Lib>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -247,26 +247,6 @@
     <ClCompile Include="..\..\..\openFrameworks\video\ofVideoPlayer.cpp" />
     <ClCompile Include="..\..\..\openFrameworks\communication\ofArduino.cpp" />
     <ClCompile Include="..\..\..\openFrameworks\communication\ofSerial.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\cairo\lib\vs\cairo-static.lib" />
-    <Library Include="..\..\..\fmodex\lib\vs\fmodex_vc.lib" />
-    <Library Include="..\..\..\FreeImage\lib\vs\FreeImage.lib" />
-    <Library Include="..\..\..\freetype\lib\vs\freetype252.lib" />
-    <Library Include="..\..\..\glew\lib\vs\glew32s.lib" />
-    <Library Include="..\..\..\glfw\lib\vs\glfw3.lib" />
-    <Library Include="..\..\..\libpng\libpng.lib" />
-    <Library Include="..\..\..\poco\lib\vs\libeay32MT.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoCryptomt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoFoundationmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoJSONmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoNetmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoNetSSLmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoUtilmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoXMLmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\ssleay32MT.lib" />
-    <Library Include="..\..\..\quicktime\lib\vs\qtmlClient.lib" />
-    <Library Include="..\..\..\tess2\lib\vs\tess2.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

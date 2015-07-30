@@ -465,24 +465,4 @@
       <Filter>libs\openFrameworks\utils</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\FreeImage\lib\vs\FreeImage.lib" />
-    <Library Include="..\..\..\freetype\lib\vs\freetype252.lib" />
-    <Library Include="..\..\..\quicktime\lib\vs\qtmlClient.lib" />
-    <Library Include="..\..\..\glfw\lib\vs\glfw3.lib" />
-    <Library Include="..\..\..\cairo\lib\vs\cairo-static.lib" />
-    <Library Include="..\..\..\fmodex\lib\vs\fmodex_vc.lib" />
-    <Library Include="..\..\..\libpng\libpng.lib" />
-    <Library Include="..\..\..\tess2\lib\vs\tess2.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoUtilmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoXMLmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoFoundationmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoNetmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoNetSSLmt.lib" />
-    <Library Include="..\..\..\glew\lib\vs\glew32s.lib" />
-    <Library Include="..\..\..\poco\lib\vs\libeay32MT.lib" />
-    <Library Include="..\..\..\poco\lib\vs\ssleay32MT.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoJSONmt.lib" />
-    <Library Include="..\..\..\poco\lib\vs\PocoCryptomt.lib" />
-  </ItemGroup>
 </Project>
