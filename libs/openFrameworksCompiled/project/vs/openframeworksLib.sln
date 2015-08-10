@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openframeworksLib", "openframeworksLib.vcxproj", "{5837595D-ACA9-485C-8E76-729040CE4B0B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ofxKinectForWindows2Lib", "..\..\..\..\addons\ofxKinectForWindows2\ofxKinectForWindows2Lib\ofxKinectForWindows2Lib.vcxproj", "{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug MX|Win32 = Debug MX|Win32
@@ -29,6 +31,22 @@ Global
 		{5837595D-ACA9-485C-8E76-729040CE4B0B}.Release|Win32.ActiveCfg = Release|Win32
 		{5837595D-ACA9-485C-8E76-729040CE4B0B}.Release|Win32.Build.0 = Release|Win32
 		{5837595D-ACA9-485C-8E76-729040CE4B0B}.Release|x64.ActiveCfg = Release|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug MX|Win32.ActiveCfg = Debug|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug MX|Win32.Build.0 = Debug|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug MX|x64.ActiveCfg = Debug|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug MX|x64.Build.0 = Debug|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug|Win32.Build.0 = Debug|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug|x64.ActiveCfg = Debug|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Debug|x64.Build.0 = Debug|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release MX|Win32.ActiveCfg = Release|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release MX|Win32.Build.0 = Release|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release MX|x64.ActiveCfg = Release|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release MX|x64.Build.0 = Release|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release|Win32.ActiveCfg = Release|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release|Win32.Build.0 = Release|Win32
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release|x64.ActiveCfg = Release|x64
+		{F6008D6A-6D39-4B68-840E-E7AC8ED855DA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

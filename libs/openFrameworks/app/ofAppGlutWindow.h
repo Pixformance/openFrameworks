@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 #include "ofAppBaseWindow.h"
-#include "ofEvents.h"
-#include "ofTypes.h"
+#include "events/ofEvents.h"
+#include "types/ofTypes.h"
 
 #ifdef TARGET_LINUX
 #include "ofPixels.h"

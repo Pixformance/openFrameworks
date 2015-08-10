@@ -1322,7 +1322,7 @@ GLFWAPI void glfwWindowHint(int target, int hint);
  *
  *  @ingroup window
  */
-GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share);
+GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height, const char* title, GLFWmonitor* monitor, GLFWwindow* share, void* parentWindow);
 
 /*! @brief Destroys the specified window and its context.
  *

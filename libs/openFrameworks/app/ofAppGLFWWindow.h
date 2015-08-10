@@ -1,18 +1,18 @@
 #pragma once
 
-#include "ofConstants.h"
+#include "utils/ofConstants.h"
 
 #define GLFW_INCLUDE_NONE
 
 #if (_MSC_VER)
-#include <GLFW/glfw3.h>
+#include "../../GLFW/include/GLFW/glfw3.h"
 #else
 #include "GLFW/glfw3.h"
 #endif
 
 #include "ofAppBaseWindow.h"
-#include "ofEvents.h"
-#include "ofPixels.h"
+#include "events/ofEvents.h"
+#include "graphics/ofPixels.h"
 
 //class ofVec3f;
 class ofBaseApp;
@@ -44,10 +44,15 @@ public:
 
     // this functions are only meant to be called from inside OF don't call them from your code
 	void setOpenGLVersion(int major, int minor);
-	void setupOpenGL(int w, int h, int screenMode);
+	void setupOpenGL(int w, int h, int screenMode, HWND parentWindow = NULL);
 	void initializeWindow();
 	void runAppViaInfiniteLoop(ofBaseApp * appPtr);
-	void windowShouldClose();
+
+    void setup(ofPtr<ofBaseApp> appPtr);
+    void runOneIteration();
+    void cleanup();
+
+    void windowShouldClose();
 
 
 	void hideCursor();

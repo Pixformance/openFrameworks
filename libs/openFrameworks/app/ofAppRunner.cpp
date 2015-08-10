@@ -138,8 +138,71 @@ void ofRunApp(ofBaseApp * OFSA){
 	window->runAppViaInfiniteLoop(OFSAptr.get());
 }
 
+void ofPrepareToRunApp(ofBaseApp * OFSA){
+
+	OFSAptr = ofPtr<ofBaseApp>(OFSA);
+	if(OFSAptr){
+		OFSAptr->mouseX = 0;
+		OFSAptr->mouseY = 0;
+	}
+
+#ifndef TARGET_ANDROID
+	atexit(ofExitCallback);
+#endif
+
+#if defined(TARGET_LINUX) || defined(TARGET_OSX)
+	// see http://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html#Termination-Signals
+	signal(SIGTERM, &sighandler);
+    signal(SIGQUIT, &sighandler);
+	signal(SIGINT,  &sighandler);
+
+	signal(SIGKILL, &sighandler); // not much to be done here
+	signal(SIGHUP,  &sighandler); // not much to be done here
+
+	// http://www.gnu.org/software/libc/manual/html_node/Program-Error-Signals.html#Program-Error-Signals
+    signal(SIGABRT, &sighandler);  // abort signal
+#endif
+
+
+	#ifdef WIN32_HIGH_RES_TIMING
+		timeBeginPeriod(1);		// ! experimental, sets high res time
+								// you need to call timeEndPeriod.
+								// if you quit the app other than "esc"
+								// (ie, close the console, kill the process, etc)
+								// at exit wont get called, and the time will
+								// remain high res, that could mess things
+								// up on your system.
+								// info here:http://www.geisswerks.com/ryan/FAQS/timing.html
+
+	#endif
+
+	window->initializeWindow();
+
+	ofSeedRandom();
+	ofResetElapsedTimeCounter();
+	ofSetWorkingDirectoryToDefault();
+	
+
+    ofAddListener(ofEvents().setup,OFSAptr.get(),&ofBaseApp::setup,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().update,OFSAptr.get(),&ofBaseApp::update,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().draw,OFSAptr.get(),&ofBaseApp::draw,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().exit,OFSAptr.get(),&ofBaseApp::exit,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().keyPressed,OFSAptr.get(),&ofBaseApp::keyPressed,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().keyReleased,OFSAptr.get(),&ofBaseApp::keyReleased,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseMoved,OFSAptr.get(),&ofBaseApp::mouseMoved,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseDragged,OFSAptr.get(),&ofBaseApp::mouseDragged,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mousePressed,OFSAptr.get(),&ofBaseApp::mousePressed,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseReleased,OFSAptr.get(),&ofBaseApp::mouseReleased,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().windowEntered,OFSAptr.get(),&ofBaseApp::windowEntry,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().windowResized,OFSAptr.get(),&ofBaseApp::windowResized,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().messageEvent,OFSAptr.get(),&ofBaseApp::messageReceived,OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().fileDragEvent,OFSAptr.get(),&ofBaseApp::dragged,OF_EVENT_ORDER_APP);
+
+	window->runAppViaInfiniteLoop(OFSAptr.get());
+}
+
 //--------------------------------------
-void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMode){
+void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMode, HWND parentWindow){
     if(!ofGetCurrentRenderer()) {
 	#ifdef USE_PROGRAMMABLE_GL
 	    ofPtr<ofBaseRenderer> renderer(new ofGLProgrammableRenderer(false));
@@ -165,7 +228,7 @@ void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMod
 		#endif
 	}
 
-	window->setupOpenGL(w, h, screenMode);
+	window->setupOpenGL(w, h, screenMode, parentWindow);
 }
 
 void ofGLReadyCallback(){
@@ -313,6 +376,52 @@ void ofRunApp(ofPtr<ofBaseApp> OFSA){
 
 	window->runAppViaInfiniteLoop(OFSAptr.get());
 
+}
+
+//--------------------------------------
+
+void ofPrepareToRunApp(ofPtr<ofBaseApp> OFSA){
+
+    OFSAptr = OFSA;
+    if (OFSAptr){
+        OFSAptr->mouseX = 0;
+        OFSAptr->mouseY = 0;
+    }
+
+#ifndef TARGET_ANDROID
+    atexit(ofExitCallback);
+#endif
+
+#ifdef WIN32_HIGH_RES_TIMING
+    timeBeginPeriod(1);		// ! experimental, sets high res time
+    // you need to call timeEndPeriod.
+    // if you quit the app other than "esc"
+    // (ie, close the console, kill the process, etc)
+    // at exit wont get called, and the time will
+    // remain high res, that could mess things
+    // up on your system.
+    // info here:http://www.geisswerks.com/ryan/FAQS/timing.html
+#endif
+
+    window->initializeWindow();
+
+    ofSeedRandom();
+    ofResetElapsedTimeCounter();
+
+    ofAddListener(ofEvents().setup, OFSA.get(), &ofBaseApp::setup, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().update, OFSA.get(), &ofBaseApp::update, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().draw, OFSA.get(), &ofBaseApp::draw, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().exit, OFSA.get(), &ofBaseApp::exit, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().keyPressed, OFSA.get(), &ofBaseApp::keyPressed, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().keyReleased, OFSA.get(), &ofBaseApp::keyReleased, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseMoved, OFSA.get(), &ofBaseApp::mouseMoved, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseDragged, OFSA.get(), &ofBaseApp::mouseDragged, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mousePressed, OFSA.get(), &ofBaseApp::mousePressed, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().mouseReleased, OFSA.get(), &ofBaseApp::mouseReleased, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().windowEntered, OFSA.get(), &ofBaseApp::windowEntry, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().windowResized, OFSA.get(), &ofBaseApp::windowResized, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().messageEvent, OFSA.get(), &ofBaseApp::messageReceived, OF_EVENT_ORDER_APP);
+    ofAddListener(ofEvents().fileDragEvent, OFSA.get(), &ofBaseApp::dragged, OF_EVENT_ORDER_APP);
 }
 
 //--------------------------------------

@@ -127,7 +127,7 @@ void ofAppGLFWWindow::setOpenGLVersion(int major, int minor){
 }
 
 //------------------------------------------------------------
-void ofAppGLFWWindow::setupOpenGL(int w, int h, int screenMode){
+void ofAppGLFWWindow::setupOpenGL(int w, int h, int screenMode, HWND parentWindow){
 
 	requestedWidth = w;
 	requestedHeight = h;
@@ -174,13 +174,13 @@ void ofAppGLFWWindow::setupOpenGL(int w, int h, int screenMode){
 		int count;
 		GLFWmonitor** monitors = glfwGetMonitors(&count);
 		if(count>0){
-			windowP = glfwCreateWindow(w, h, "", monitors[0], NULL);
+			windowP = glfwCreateWindow(w, h, "", monitors[0], NULL, parentWindow);
 		}else{
 			ofLogError("ofAppGLFWWindow") << "couldn't find any monitors";
 			return;
 		}
 	}else{
-		windowP = glfwCreateWindow(w, h, "", NULL, NULL);
+		windowP = glfwCreateWindow(w, h, "", NULL, NULL, parentWindow);
 		if(!windowP){
 			ofLogError("ofAppGLFWWindow") << "couldn't create GLFW window";
 		}
@@ -287,7 +287,7 @@ void ofAppGLFWWindow::setWindowIcon(const ofPixels & iconPixels){
 
 //--------------------------------------------
 void ofAppGLFWWindow::runAppViaInfiniteLoop(ofBaseApp * appPtr){
-	ofAppPtr = appPtr;
+    ofAppPtr = appPtr;
 
 	glfwMakeContextCurrent(windowP);
 
@@ -296,6 +296,25 @@ void ofAppGLFWWindow::runAppViaInfiniteLoop(ofBaseApp * appPtr){
 		ofNotifyUpdate();
 		display();
 	}
+    glfwDestroyWindow(windowP);
+    glfwTerminate();
+}
+
+
+void ofAppGLFWWindow::setup(ofPtr<ofBaseApp> appPtr) {
+    ofAppPtr = appPtr.get();        //todo This is a big no!
+
+    glfwMakeContextCurrent(windowP);
+
+    ofNotifySetup();
+}
+
+void ofAppGLFWWindow::runOneIteration() {
+    ofNotifyUpdate();
+    display();
+}
+
+void ofAppGLFWWindow::cleanup() {
     glfwDestroyWindow(windowP);
     glfwTerminate();
 }
@@ -370,7 +389,7 @@ void ofAppGLFWWindow::display(void){
 	}
 
 	nFramesSinceWindowResized++;
-	glfwPollEvents();
+	//glfwPollEvents();
 
 }
 

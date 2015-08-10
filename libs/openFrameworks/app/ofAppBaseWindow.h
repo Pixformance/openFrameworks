@@ -16,7 +16,7 @@ public:
 	ofAppBaseWindow(){};
 	virtual ~ofAppBaseWindow(){};
 
-	virtual void setupOpenGL(int w, int h, int screenMode) {}
+    virtual void setupOpenGL(int w, int h, int screenMode, HWND parentWindow = NULL) {}
 	virtual void initializeWindow() {}
 	virtual void runAppViaInfiniteLoop(ofBaseApp * appPtr) {}
 	virtual void windowShouldClose(){std::exit(0);}
