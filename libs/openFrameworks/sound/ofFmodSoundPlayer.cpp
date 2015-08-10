@@ -4,16 +4,6 @@
 #include "ofUtils.h"
 
 
-bool bFmodInitialized_ = false;
-bool bUseSpectrum_ = false;
-float fftValues_[8192];			//
-float fftInterpValues_[8192];			//
-float fftSpectrum_[8192];		// maximum #ofFmodSoundPlayer is 8192, in fmodex....
-
-
-// ---------------------  static vars
-static FMOD_CHANNELGROUP * channelgroup;
-static FMOD_SYSTEM       * sys;
 
 // these are global functions, that affect every sound / channel:
 // ------------------------------------------------------------
@@ -21,21 +11,17 @@ static FMOD_SYSTEM       * sys;
 
 //--------------------
 void ofFmodSoundStopAll(){
-	ofFmodSoundPlayer::initializeFmod();
-	FMOD_ChannelGroup_Stop(channelgroup);
+
 }
 
 //--------------------
 void ofFmodSoundSetVolume(float vol){
-	ofFmodSoundPlayer::initializeFmod();
-	FMOD_ChannelGroup_SetVolume(channelgroup, vol);
+
 }
 
 //--------------------
 void ofFmodSoundUpdate(){
-	if (bFmodInitialized_){
-		FMOD_System_Update(sys);
-	}
+
 }
 
 //--------------------

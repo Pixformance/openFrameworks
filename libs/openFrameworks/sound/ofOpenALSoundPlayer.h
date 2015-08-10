@@ -36,11 +36,6 @@
 // ---------------------------------------------------------------------------- SOUND SYSTEM FMOD
 
 // --------------------- global functions:
-void ofFmodSoundStopAll();
-void ofFmodSoundSetVolume(float vol);
-void ofOpenALSoundUpdate();						// calls FMOD update.
-float * ofFmodSoundGetSpectrum(int nBands);		// max 512...
-
 
 // --------------------- player functions:
 class ofOpenALSoundPlayer : public ofBaseSoundPlayer, public ofThread {
