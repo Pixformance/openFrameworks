@@ -231,6 +231,28 @@ void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMod
 	window->setupOpenGL(w, h, screenMode, parentWindow);
 }
 
+void ofCleanupOpenGL()
+{
+    ofURLFileLoaderShutdown();
+
+    ofRemoveListener(ofEvents().setup, OFSAptr.get(), &ofBaseApp::setup, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().update, OFSAptr.get(), &ofBaseApp::update, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().draw, OFSAptr.get(), &ofBaseApp::draw, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().exit, OFSAptr.get(), &ofBaseApp::exit, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().keyPressed, OFSAptr.get(), &ofBaseApp::keyPressed, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().keyReleased, OFSAptr.get(), &ofBaseApp::keyReleased, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().mouseMoved, OFSAptr.get(), &ofBaseApp::mouseMoved, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().mouseDragged, OFSAptr.get(), &ofBaseApp::mouseDragged, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().mousePressed, OFSAptr.get(), &ofBaseApp::mousePressed, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().mouseReleased, OFSAptr.get(), &ofBaseApp::mouseReleased, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().windowResized, OFSAptr.get(), &ofBaseApp::windowResized, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().windowEntered, OFSAptr.get(), &ofBaseApp::windowEntry, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().messageEvent, OFSAptr.get(), &ofBaseApp::messageReceived, OF_EVENT_ORDER_APP);
+    ofRemoveListener(ofEvents().fileDragEvent, OFSAptr.get(), &ofBaseApp::dragged, OF_EVENT_ORDER_APP);
+
+    window = ofPtr<ofAppBaseWindow>();
+}
+
 void ofGLReadyCallback(){
 
 #ifndef TARGET_OPENGLES

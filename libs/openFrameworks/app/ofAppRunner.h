@@ -23,6 +23,8 @@ void        ofPrepareToRunApp(ofBaseApp * OFSA = NULL); // will be deprecated
 ofBaseApp * ofGetAppPtr();
 void ofSetAppPtr(ofPtr<ofBaseApp> appPtr);
 
+void        ofCleanupOpenGL();
+
 void		ofExit(int status=0);
 
 //-------------------------- time
