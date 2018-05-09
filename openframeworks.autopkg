@@ -1,0 +1,66 @@
+nuget {
+	nuspec {
+		id = openframeworks_native;
+        version : 0.8.1;
+        title: OpenFrameworks;
+        authors: {Pixformance};
+        owners: {Pixformance};
+        licenseUrl: "https://openframeworks.cc/about/license/";
+        projectUrl: "https://openframeworks.cc/";
+        requireLicenseAcceptance:false;
+        summary:@"openFrameworks is an open source C++ toolkit designed to assist the creative process by providing a simple and intuitive framework for experimentation.";  
+        description: @"openFrameworks is an open source C++ toolkit designed to assist the creative process by providing a simple and intuitive framework for experimentation.";
+        releaseNotes: "First release";
+        copyright: Copyright 2018;
+        tags: { OpenFrameworks, native, CoApp };
+	}
+	
+	files {
+		
+		include: { ".\libs\openFrameworks\**\*" };
+		
+		[x86,v120,debug] {
+			lib: { ".\libs\libs\glew32sd.lib",
+				   ".\libs\libs\qtmlClient.lib",
+				   ".\libs\libs\PocoFoundationmtd.lib",
+				   ".\libs\libs\PocoCryptomtd.lib",
+				   ".\libs\libs\PocoJSONmtd.lib",
+				   ".\libs\libs\PocoNetmtd.lib",
+				   ".\libs\libs\PocoNetSSLmtd.lib",
+				   ".\libs\libs\PocoUtilmtd.lib",
+				   ".\libs\libs\PocoXMLmtd.lib",
+				   ".\libs\libs\ssleay32MTd.lib",
+				   ".\libs\libs\tess2d.lib",
+				   ".\libs\libs\ofxKinectForWindows2LibD.lib",
+				   ".\libs\libs\cairo-staticd.lib",
+				   ".\libs\libs\FreeImageLibd.lib",
+				   ".\libs\libs\glfw3d.lib",
+				   ".\libs\openFrameworksCompiled\lib\vs\openframeworksLibDebug.lib",
+				   ".\libs\libs\freetype252MT_D.lib",
+				   ".\libs\libs\libeay32MTd.lib"		};
+				   
+			symbols: {  ".\libs\openFrameworksCompiled\project\vs\obj\Debug\vc120.pdb"   };
+		}
+		
+		[x86,v120,release] {
+			lib: { ".\libs\libs\glew32s.lib",
+				   ".\libs\libs\qtmlClient.lib",
+				   ".\libs\libs\PocoFoundationmt.lib",
+				   ".\libs\libs\PocoCryptomt.lib",
+				   ".\libs\libs\PocoJSONmt.lib",
+				   ".\libs\libs\PocoNetmt.lib",
+				   ".\libs\libs\PocoNetSSLmt.lib",
+				   ".\libs\libs\PocoUtilmt.lib",
+				   ".\libs\libs\PocoXMLmt.lib",
+				   ".\libs\libs\ssleay32MT.lib",
+				   ".\libs\libs\tess2.lib",
+				   ".\libs\libs\ofxKinectForWindows2Lib.lib",
+				   ".\libs\libs\cairo-static.lib",
+				   ".\libs\libs\FreeImageLib.lib",
+				   ".\libs\libs\glfw3.lib",
+				   ".\libs\openFrameworksCompiled\lib\vs\openframeworksLib.lib",
+				   ".\libs\libs\freetype252MT.lib",
+				   ".\libs\libs\libeay32MT.lib"		 };
+		}	
+	}
+}
