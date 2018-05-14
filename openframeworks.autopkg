@@ -104,8 +104,9 @@ nuget {
 			".\addons\ofxKinectForWindows2\src\**\*.h"
 		};
 		
-		[x86,v120,debug] {
+		[x86,v120,debug] {		
 			lib: { ".\libs\libs\glew32s.lib",
+				   ".\libs\libs\freeglutD.lib",
 				   ".\libs\libs\qtmlClient.lib",
 				   ".\libs\libs\PocoFoundationmtd.lib",
 				   ".\libs\libs\PocoCryptomtd.lib",
@@ -129,6 +130,7 @@ nuget {
 		
 		[x86,v120,release] {
 			lib: { ".\libs\libs\glew32s.lib",
+				    ".\libs\libs\freeglut.lib",
 				   ".\libs\libs\qtmlClient.lib",
 				   ".\libs\libs\PocoFoundationmt.lib",
 				   ".\libs\libs\PocoCryptomt.lib",
@@ -149,4 +151,5 @@ nuget {
 		}	
 	}
 }
+
 
