@@ -17,10 +17,95 @@ nuget {
 	
 	files {
 		
-		include: { ".\libs\openFrameworks\**\*" };
+		include: { ".\libs\openFrameworks\**\*.h" };
+		
+		nestedIncludeAssimp: {
+			#destination = ${d_include}assimp\include;
+			".\libs\assimp\include\**\*.h"
+		};
+		
+		nestedIncludeCairo: {
+			#destination = ${d_include}cairo\include;
+			".\libs\cairo\include\**\*.h"
+		};
+		
+		nestedIncludeFreeglut: {
+			#destination = ${d_include}freeglut\include;
+			".\libs\freeglut\include\**\*.h"
+		};		
+		
+		nestedIncludeFreeImage: {
+			#destination = ${d_include}FreeImage\include;
+			".\libs\FreeImage\include\**\*.h"
+		};		
+		
+		nestedIncludeFreetype: {
+			#destination = ${d_include}freetype\include;
+			".\libs\freetype\include\**\*.h"
+		};		
+		
+		nestedIncludeGlew: {
+			#destination = ${d_include}glew\include\GL;
+			".\libs\glew\include\**\*.h"
+		};		
+		
+		nestedIncludeGlfw: {
+			#destination = ${d_include}..\glfw\include\GLFW;
+			".\libs\glfw\include\**\*.h"
+		};
+				
+		nestedIncludeGlu: {
+			#destination = ${d_include}glu\include;
+			".\libs\glu\include\**\*.h"
+		};		
+		
+		nestedIncludeGlut: {
+			#destination = ${d_include}glut\include;
+			".\libs\glut\include\**\*.h"
+		};		
+		
+		nestedIncludeKiss: {
+			#destination = ${d_include}kiss\include;
+			".\libs\kiss\include\**\*.h"
+		};		
+		
+		nestedIncludeOpenssl: {
+			#destination = ${d_include}openssl\include\openssl;
+			".\libs\openssl\include\**\*.h"
+		};
+		
+		nestedIncludePoco: {
+			#destination = ${d_include}..\poco\include;
+			".\libs\poco\include\**\*.h"
+		};
+		
+		nestedIncludeQuicktime: {
+			#destination = ${d_include}..\quicktime\include;
+			".\libs\quicktime\include\**\*.h"
+		};		
+		
+		nestedIncludeRtAudio: {
+			#destination = ${d_include}rtAudio\include;
+			".\libs\rtAudio\include\**\*.h"
+		};
+				
+		nestedIncludeTess2: {
+			#destination = ${d_include}tess2\include;
+			".\libs\tess2\include\**\*.h"
+		};
+				
+		nestedIncludeVideoInput: {
+			#destination = ${d_include}videoInput\include;
+			".\libs\videoInput\include\**\*.h"
+		};
+		
+		nestedIncludeAddons: {
+			#destination = ${d_include}..\..\addons\ofxKinectForWindows2\src;
+			".\addons\ofxKinectForWindows2\src\**\*.h"
+		};
 		
 		[x86,v120,debug] {
-			lib: { ".\libs\libs\glew32sd.lib",
+			lib: { ".\libs\libs\glew32s.lib",
 				   ".\libs\libs\qtmlClient.lib",
 				   ".\libs\libs\PocoFoundationmtd.lib",
 				   ".\libs\libs\PocoCryptomtd.lib",
@@ -64,3 +149,4 @@ nuget {
 		}	
 	}
 }
+
